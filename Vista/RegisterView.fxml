@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ControladorPrincipal">
+    <left>
+        <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: CFCFCF;" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" layoutX="7.0" layoutY="124.0" prefHeight="17.0" prefWidth="213.0" text="Impulse">
+                    <font>
+                        <Font name="Verdana Bold" size="24.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Line endX="100.0" layoutX="106.0" layoutY="163.0" startX="-83.0" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../ImpulseLogo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="registrarEstudiante" layoutX="22.0" layoutY="146.0" mnemonicParsing="false" onAction="#registroEstudianteOnAction" prefHeight="33.0" prefWidth="249.0" style="-fx-background-color: CFCFCF;" text="Registrarse como Estudiante" />
+                <Button fx:id="registrarUniEmp" layoutX="22.0" layoutY="214.0" mnemonicParsing="false" onAction="#registroUniEmpoOnAction" prefHeight="33.0" prefWidth="249.0" style="-fx-background-color: CFCFCF;" text="Registrarse como Universidad/Empresa" />
+                <Label alignment="CENTER" layoutX="40.0" layoutY="60.0" prefHeight="17.0" prefWidth="213.0" text="Tipo de registro">
+                    <font>
+                        <Font name="Verdana" size="14.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Button fx:id="volver" layoutX="22.0" layoutY="283.0" mnemonicParsing="false" onAction="#volverAMainView" prefHeight="33.0" prefWidth="249.0" style="-fx-background-color: CFCFCF;" text="Regresar" />
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ControladorPrincipal">
+    <left>
+        <AnchorPane prefHeight="407.0" prefWidth="228.0" style="-fx-background-color: CFCFCF;" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" layoutX="7.0" layoutY="124.0" prefHeight="17.0" prefWidth="213.0" text="Impulse">
+                    <font>
+                        <Font name="Verdana Bold" size="24.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Line endX="100.0" layoutX="106.0" layoutY="163.0" startX="-83.0" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../ImpulseLogo.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" layoutX="40.0" layoutY="20.0" prefHeight="17.0" prefWidth="213.0" text="Registro Arrendador">
+                    <font>
+                        <Font name="Verdana" size="18.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Label alignment="CENTER" layoutX="16.0" layoutY="59.0" prefHeight="23.0" prefWidth="49.0" text="Nombre">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <TextField fx:id="arrendadorNombreTxtField" layoutX="83.0" layoutY="58.0" prefHeight="25.0" prefWidth="185.0" />
+                <Label alignment="CENTER" layoutX="16.0" layoutY="95.0" prefHeight="23.0" prefWidth="49.0" text="Edad">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <TextField fx:id="arrendadorApellitdoTxtField" layoutX="83.0" layoutY="94.0" prefHeight="25.0" prefWidth="185.0" />
+                <Label alignment="CENTER" layoutX="16.0" layoutY="131.0" prefHeight="23.0" prefWidth="49.0" text="Carrera">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <TextField fx:id="arrendadorEdadTxtField" layoutX="83.0" layoutY="130.0" prefHeight="25.0" prefWidth="183.0" />
+                <Label alignment="CENTER" layoutX="16.0" layoutY="166.0" prefHeight="23.0" prefWidth="57.0" text="Instucion">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <TextField fx:id="arrendadorDireccionTxtField" layoutX="83.0" layoutY="165.0" prefHeight="25.0" prefWidth="185.0" />
+                <TextField fx:id="arrendadorCelularTxtField" layoutX="83.0" layoutY="205.0" prefHeight="25.0" prefWidth="185.0" />
+                <TextField fx:id="arrendadorMailTxtField" layoutX="83.0" layoutY="245.0" prefHeight="25.0" prefWidth="185.0" />
+                <TextField fx:id="arrendadorTipoDocTxtField" layoutX="83.0" layoutY="285.0" prefHeight="25.0" prefWidth="30.0" />
+                <TextField fx:id="arrendadorIdTxtField" layoutX="145.0" layoutY="285.0" prefHeight="25.0" prefWidth="125.0" />
+                <Label alignment="CENTER" layoutX="16.0" layoutY="206.0" prefHeight="23.0" prefWidth="49.0" text="Celular">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Label alignment="CENTER" layoutX="16.0" layoutY="248.0" prefHeight="23.0" prefWidth="49.0" text="eMail">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Label alignment="CENTER" layoutX="9.0" layoutY="286.0" prefHeight="23.0" prefWidth="63.0" text="Tipo Doc">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Label alignment="CENTER" layoutX="118.0" layoutY="286.0" prefHeight="23.0" prefWidth="24.0" text="ID">
+                    <font>
+                        <Font name="Verdana" size="12.0" />
+                    </font>
+                    <effect>
+                        <Bloom />
+                    </effect>
+                </Label>
+                <Button fx:id="confirmarRegistro" layoutX="130.0" layoutY="361.0" mnemonicParsing="false" onAction="#confirmarRegistroOnAction" text="Confirmar" />
+                <Button fx:id="volver" layoutX="9.0" layoutY="19.0" mnemonicParsing="false" onAction="#volverOnAction" prefHeight="25.0" prefWidth="30.0" text="&lt;-" />
+            <CheckBox layoutX="127.0" layoutY="328.0" mnemonicParsing="false" text="Egresado?" />
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>
