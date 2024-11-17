@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IMPULSE.iml" filepath="$PROJECT_DIR$/IMPULSE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../javafx-sdk-22.0.1/javafx-sdk-22.0.1.iml" filepath="$PROJECT_DIR$/../../../javafx-sdk-22.0.1/javafx-sdk-22.0.1.iml" />
     </modules>
   </component>
 </project>
