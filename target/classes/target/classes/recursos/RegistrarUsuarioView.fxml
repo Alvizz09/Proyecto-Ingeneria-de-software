@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="731.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.RegistroController">
+    <children>
+        <Button fx:id="volverRegButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#volverRegButtonOnAction" prefHeight="40.0" prefWidth="72.0" text="&lt;--">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Text layoutX="146.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listo para Impulsarte?" textAlignment="CENTER" wrappingWidth="272.28564453125">
+            <font>
+                <Font name="Gill Sans Nova Bold" size="47.0" />
+            </font>
+        </Text>
+        <Text layoutX="192.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicia Sesion en tu cuenta">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <TextField fx:id="emailRegTextField" layoutX="101.0" layoutY="259.0" prefHeight="55.0" prefWidth="361.0" promptText="Correo" />
+        <TextField fx:id="nombresRegTextField" layoutX="102.0" layoutY="351.0" prefHeight="55.0" prefWidth="361.0" promptText="Nombre y Apellido" />
+      <TextField fx:id="passwordRegTextField" layoutX="101.0" layoutY="445.0" prefHeight="55.0" prefWidth="361.0" promptText="Contraseña" />
+      <TextField fx:id="ageRegTextField" layoutX="102.0" layoutY="538.0" prefHeight="55.0" prefWidth="361.0" promptText="Edad" />
+      <Button fx:id="nextRegButton" layoutX="102.0" layoutY="630.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="361.0" text="Siguiente" />
+    </children>
+</AnchorPane>
