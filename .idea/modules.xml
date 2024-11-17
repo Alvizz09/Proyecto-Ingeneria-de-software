@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IMPULSE.iml" filepath="$PROJECT_DIR$/IMPULSE.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../javafx-sdk-22.0.1/javafx-sdk-22.0.1.iml" filepath="$PROJECT_DIR$/../../../javafx-sdk-22.0.1/javafx-sdk-22.0.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../javafx-sdk-22.0.1/lib/lib.iml" filepath="$PROJECT_DIR$/../../../javafx-sdk-22.0.1/lib/lib.iml" />
     </modules>
   </component>
 </project>

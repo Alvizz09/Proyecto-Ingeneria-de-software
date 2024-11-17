@@ -1,15 +1,17 @@
 package Modelo;
 
+import java.util.Arrays;
+
 public class Oportunidad {
     private String idOportunidad;
     private String nombre;
     private String descripcion;
     private boolean esPrivada;
-    private String tags[];
+    private String tags;
     private String tipo;
 
     // Constructor
-    public Oportunidad(String idOportunidad, String nombre, String descripcion, boolean esPrivada, String[] tags, String tipo) {
+    public Oportunidad(String idOportunidad, String nombre, String descripcion, boolean esPrivada, String tags, String tipo) {
         this.idOportunidad = idOportunidad;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -51,11 +53,11 @@ public class Oportunidad {
         this.esPrivada = esPrivada;
     }
 
-    public String[] getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(String[] tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 
@@ -66,5 +68,16 @@ public class Oportunidad {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-}
 
+    @Override
+    public String toString() {
+        return "Oportunidad{" +
+                "idOportunidad='" + idOportunidad + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", esPrivada=" + esPrivada +
+                ", tags=" + tags +'\''+
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
+}

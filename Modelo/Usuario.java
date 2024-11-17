@@ -22,6 +22,9 @@ public class Usuario {
         this.carrera = carrera;
         this.universidad = universidad;
     }
+    public Usuario(){
+
+    }
 
 public String getIdUsuario() {
     return idUsuario;
@@ -86,5 +89,17 @@ public String getUniversidad() {
 public void setUniversidad(String universidad) {
     this.universidad = universidad;
 }
-
+@Override
+public String toString() {
+    return "Usuario{" +
+            "idUsuario='" + idUsuario + '\'' +
+            ", nombre='" + nombre + '\'' +
+            ", apellido='" + apellido + '\'' +
+            ", correo='" + correo + '\'' +
+            ", contrasena='" + contrasena + '\'' +
+            ", edad=" + edad +
+            ", carrera='" + carrera + '\'' +
+            ", universidad='" + universidad + '\'' +
+            '}';
+}
 }
