@@ -11,14 +11,14 @@ import java.io.IOException;
 
 public class RegistroController {
     @FXML
-    private Button iniciarButton, loginButton, registerButton, volverButton;
-    private TextField emailTextField, passwordTextField;
-
+    private Button iniciarButton, loginButton, registerButton, volverButton, nextRegButton, volverRegButton;
     @FXML
-    public void iniciarButtonOnAction() {
+    private TextField emailTextField, passwordTextField, emailRegTextField, passwordRegTextField, nombresRegTextField, ageRegTextField;
+
+    private void changeScene(Button button, String fxmlFilePath) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../recursos/IniciarSesionView.fxml"));
-            Stage stage = (Stage) iniciarButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFilePath));
+            Stage stage = (Stage) button.getScene().getWindow();
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
         } catch (IOException e) {
@@ -27,14 +27,21 @@ public class RegistroController {
     }
 
     @FXML
-    public void loginButtonOnAction() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../recursos/MainView.fxml"));
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            Scene scene = new Scene(loader.load());
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void iniciarButtonOnAction() {
+        changeScene(iniciarButton, "../recursos/IniciarSesionView.fxml");
+    }
+
+    @FXML
+    public void volverButtonOnAction() {
+        changeScene(volverButton, "../recursos/MainView.fxml");
+    }
+
+    @FXML
+    public void registerButtonOnAction() {
+        changeScene(registerButton, "../recursos/RegistrarUsuarioView.fxml");
+    }
+    @FXML
+    public void volverRegButtonOnAction() {
+        changeScene(volverRegButton, "../recursos/IniciarSesionView.fxml");
     }
 }
