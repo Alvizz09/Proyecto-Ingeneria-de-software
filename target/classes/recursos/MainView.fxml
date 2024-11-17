@@ -9,12 +9,12 @@
    <children>
       <ImageView fitHeight="389.0" fitWidth="594.0" layoutX="-29.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../MainViewImagenPrincipal.png" />
+            <Image url="@MainViewImagenPrincipal.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="101.0" fitWidth="99.0" layoutX="219.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../ImpulseLogo.png" />
+            <Image url="@ImpulseLogo.png" />
          </image>
       </ImageView>
       <Text fill="#4ed967" fontSmoothingType="LCD" layoutX="68.0" layoutY="562.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMPULSE" textAlignment="CENTER" wrappingWidth="400.65673828125">

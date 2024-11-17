@@ -15,6 +15,7 @@ public class ControladorPrincipal {
     public Button registrarse,registarEstudiante,registrarUniEmp,volver,confirmarRegistro;
     public PasswordField password;
     public TextField eMail;
+
     @FXML
     public void registroOnAction() {
         try {

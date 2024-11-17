@@ -84,4 +84,31 @@ public class ConexionBaseDatos {
         }
         return oportunidades;
     }
+
+    public void guardarUsuario(Usuario usuario) {
+        try {
+            // Obtén la colección "Usuarios"
+            MongoCollection<Document> collection = database.getCollection("Usuarios");
+
+            // Crea un documento con los datos del usuario, sin el campo idUsuario
+            Document documento = new Document()
+                    .append("nombre", usuario.getNombre())
+                    .append("apellido", usuario.getApellido())
+                    .append("correo", usuario.getCorreo())
+                    .append("contrasena", usuario.getContrasena())
+                    .append("edad", usuario.getEdad())
+                    .append("carrera", usuario.getCarrera())
+                    .append("universidad", usuario.getUniversidad());
+
+            // Inserta el documento en la colección
+            collection.insertOne(documento);
+
+            // Obtener el ID generado automáticamente por la base de datos
+            System.out.println("Usuario guardado exitosamente con ID: " + documento.getObjectId("_id"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al guardar el usuario.");
+        }
+    }
+
 }

@@ -22,6 +22,16 @@ public class Usuario {
         this.carrera = carrera;
         this.universidad = universidad;
     }
+    public Usuario(String nombre, String apellido, String correo, String contrasena, Integer edad, String carrera, String universidad){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contrasena = contrasena;
+        this.edad = edad;
+        this.carrera = carrera;
+        this.universidad = universidad;
+    }
+
     public Usuario(){
 
     }
