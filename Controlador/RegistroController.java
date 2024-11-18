@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.Sistema;
+import Modelo.EmailSender;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,6 +18,12 @@ public class RegistroController {
     private Button iniciarButton, loginButton, registerButton, volverButton, nextRegButton, volverRegButton, finishRegButton;
     @FXML
     private TextField emailTextField, passwordTextField, emailRegTextField, passwordRegTextField, nombresRegTextField, ageRegTextField, apellidoRegTextField, carreerTextField, universityTextField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private Button iniciarButton;
+
+    private EmailSender emailSender = new EmailSender();
 
     private void changeScene(Button button, String fxmlFilePath) {
         try {
@@ -77,6 +84,8 @@ public class RegistroController {
             boolean registrado = Sistema.registrarUsuario(idUsuario, nombre, apellido, correo, contrasena, edad, carrera, universidad);
             if (registrado) {
                 mostrarMensaje("Usuario registrado con éxito");
+                // Enviar correo de confirmación
+                emailSender.sendEmail(correo, "Registro Exitoso", "Gracias por registrarte en nuestro servicio.");
             } else {
                 mostrarMensaje("Error: El correo ya está registrado.");
             }
@@ -104,6 +113,7 @@ public class RegistroController {
             throw new NumberFormatException("Ingrese un número válido en la edad");
         }
     }
+
     @FXML
     public void iniciarSesion() {
         String correo = emailTextField.getText().trim();
