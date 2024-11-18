@@ -11,8 +11,8 @@ public class Sistema {
         conexionBaseDatos = new ConexionBaseDatos();
         usuarios = conexionBaseDatos.getUserDb();
         oportunidades = conexionBaseDatos.getOportunidadesDb();
-        System.out.println(usuarios.toString());
-        System.out.println(oportunidades.toString());
+        System.out.println( usuarios);
+        System.out.println( oportunidades);
     }
 
     public static boolean registrarUsuario(String id, String nombre, String apellido, String correo, String contrasena,

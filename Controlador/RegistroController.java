@@ -17,11 +17,7 @@ public class RegistroController {
     @FXML
     private Button iniciarButton, loginButton, registerButton, volverButton, nextRegButton, volverRegButton, finishRegButton;
     @FXML
-    private TextField emailTextField, passwordTextField, emailRegTextField, passwordRegTextField, nombresRegTextField, ageRegTextField, apellidoRegTextField, carreerTextField, universityTextField;
-    @FXML
-    private TextField emailField;
-    @FXML
-    private Button iniciarButton;
+    private TextField emailTextField, passwordTextField, emailRegTextField, passwordRegTextField, nombresRegTextField, ageRegTextField, apellidoRegTextField, carreerTextField, universityTextField, emailField;
 
     private EmailSender emailSender = new EmailSender();
 

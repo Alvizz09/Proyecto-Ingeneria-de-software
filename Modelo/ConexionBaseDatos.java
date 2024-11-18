@@ -98,6 +98,7 @@ public class ConexionBaseDatos {
 
             // Crea un documento con los datos del usuario, sin el campo idUsuario
             Document documento = new Document()
+                    .append("idUsuario", usuario.getIdUsuario())
                     .append("nombre", usuario.getNombre())
                     .append("apellido", usuario.getApellido())
                     .append("correo", usuario.getCorreo())
@@ -131,5 +132,4 @@ public class ConexionBaseDatos {
             return false;
         }
     }
-
 }
