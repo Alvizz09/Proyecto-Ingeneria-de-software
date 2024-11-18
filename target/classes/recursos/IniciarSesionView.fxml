@@ -23,7 +23,7 @@
       </Text>
       <TextField fx:id="emailTextField" layoutX="101.0" layoutY="259.0" prefHeight="55.0" prefWidth="361.0" promptText="Correo electronico" />
       <TextField fx:id="passwordTextField" layoutX="102.0" layoutY="351.0" prefHeight="55.0" prefWidth="361.0" promptText="Contraseña" />
-      <Button fx:id="loginButton" layoutX="101.0" layoutY="453.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="361.0" text="Inicia Sesion" />
+      <Button fx:id="loginButton" layoutX="101.0" layoutY="453.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="55.0" prefWidth="361.0" text="Inicia Sesion" />
       <Button fx:id="registerButton" layoutX="101.0" layoutY="554.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="55.0" prefWidth="361.0" text="Registrate" />
    </children>
 </AnchorPane>
