@@ -74,8 +74,12 @@ public class RegistroController {
             String carrera = obtenerTexto(carreerTextField);
             String universidad = obtenerTexto(universityTextField);
 
-            Sistema.registrarUsuario(idUsuario, nombre, apellido, correo, contrasena, edad, carrera, universidad);
-            mostrarMensaje("Usuario registrado con éxito");
+            boolean registrado = Sistema.registrarUsuario(idUsuario, nombre, apellido, correo, contrasena, edad, carrera, universidad);
+            if (registrado) {
+                mostrarMensaje("Usuario registrado con éxito");
+            } else {
+                mostrarMensaje("Error: El correo ya está registrado.");
+            }
         } catch (NumberFormatException e) {
             mostrarMensaje("Ingrese un número válido en la edad");
         } catch (IllegalArgumentException e) {

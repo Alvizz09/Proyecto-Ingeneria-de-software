@@ -85,8 +85,14 @@ public class ConexionBaseDatos {
         return oportunidades;
     }
 
-    public void guardarUsuario(Usuario usuario) {
+    public boolean guardarUsuario(Usuario usuario) {
         try {
+
+            if (existeUsuarioPorCorreo(usuario.getCorreo())) {
+                System.err.println("Error: El correo ya está registrado.");
+                return false;
+            }
+
             // Obtén la colección "Usuarios"
             MongoCollection<Document> collection = database.getCollection("Usuarios");
 
@@ -105,9 +111,24 @@ public class ConexionBaseDatos {
 
             // Obtener el ID generado automáticamente por la base de datos
             System.out.println("Usuario guardado exitosamente con ID: " + documento.getObjectId("_id"));
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Error al guardar el usuario.");
+            return false;
+        }
+    }
+
+    public boolean existeUsuarioPorCorreo(String correo) {
+        try {
+            MongoCollection<Document> collection = database.getCollection("Usuarios");
+            Document query = new Document("correo", correo);
+            Document doc = collection.find(query).first();
+            return doc != null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al buscar el usuario por correo.");
+            return false;
         }
     }
 

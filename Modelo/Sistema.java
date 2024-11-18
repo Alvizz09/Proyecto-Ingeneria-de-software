@@ -15,11 +15,14 @@ public class Sistema {
         System.out.println(oportunidades.toString());
     }
 
-    public static void registrarUsuario(String id, String nombre, String apellido, String correo, String contrasena,
+    public static boolean registrarUsuario(String id, String nombre, String apellido, String correo, String contrasena,
                                         Integer edad, String carrera, String universidad) {
         Usuario nuevoUsuario = new Usuario(id, nombre, apellido, correo, contrasena, edad, carrera, universidad);
-        usuarios.add(nuevoUsuario);
-        conexionBaseDatos.guardarUsuario(nuevoUsuario);
+        boolean guardado = conexionBaseDatos.guardarUsuario(nuevoUsuario);
+        if (guardado) {
+            usuarios.add(nuevoUsuario);
+        }
+        return guardado;
     }
 
     public static boolean validateUser(String correo, String contraseña) {
