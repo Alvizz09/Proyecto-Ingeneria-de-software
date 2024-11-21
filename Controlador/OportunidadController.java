@@ -63,13 +63,14 @@ public class OportunidadController {
         String nombre = nameInput.getText();
         String descripcion = descriptionInput.getText();
         boolean esPrivada = false;
-        ArrayList<String> tags = new ArrayList<>(Arrays.asList(creartagsInput.getText().split(",")));
+        String tags = creartagsInput.getText();
         String tipo = tipoOportunidadComboBox.getValue();
         ArrayList<String> miembros = new ArrayList<>();
         String owner = Sistema.getUsuarioActual().getIdUsuario();
 
         boolean creada = Sistema.crearOportunidad(id, nombre, descripcion, esPrivada, tags, tipo, miembros, owner);
         if (creada) {
+
             mostrarMensaje("Oportunidad creada exitosamente.");
             volver();
         } else {

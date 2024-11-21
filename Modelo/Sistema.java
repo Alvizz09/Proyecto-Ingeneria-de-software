@@ -51,7 +51,7 @@ public class Sistema {
         return usuarioActual;
     }
 
-    public static boolean crearOportunidad(String id, String nombre, String descripcion, boolean esPrivada, ArrayList<String> tags, String tipo, ArrayList<String> miembros, String owner) {
+    public static boolean crearOportunidad(String id, String nombre, String descripcion, boolean esPrivada, String tags, String tipo, ArrayList<String> miembros, String owner) {
         Oportunidad nuevaOportunidad = new Oportunidad(id, nombre, descripcion, esPrivada, tags, tipo, miembros, owner);
         boolean guardado = conexionBaseDatos.guardarOportunidad(nuevaOportunidad);
         if (guardado) {
