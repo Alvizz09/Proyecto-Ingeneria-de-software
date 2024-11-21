@@ -25,6 +25,9 @@ public class Oportunidad {
         this.owner = owner;
     }
 
+    public Oportunidad(String idOportunidad, String nombre, String descripcion, Boolean esPrivada, String tags, String tipo) {
+    }
+
     // Getters and Setters
     public String getIdOportunidad() {
         return idOportunidad;
