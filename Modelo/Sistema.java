@@ -54,6 +54,4 @@ public class Sistema {
         return guardado;
     }
 
-
-
 }

@@ -8,7 +8,7 @@
 <AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.CrearOportunidadController">
     <children>
         <Button fx:id="backButton" layoutX="16.0" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" text="&lt;--" textFill="WHITE" />
-        <ImageView fitHeight="88.0" fitWidth="186.0" layoutX="362.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;">
+        <ImageView fitHeight="110.0" fitWidth="126.0" layoutX="340.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;">
             <image>
                 <Image url="@../Imagenes/LogoImpulse.png" />
             </image>
@@ -25,16 +25,16 @@
             </font>
         </Label>
         <TextArea fx:id="descriptionInput" layoutX="16.0" layoutY="200.0" prefHeight="186.0" prefWidth="418.0" promptText="Escribe aquí" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
-        <CheckBox fx:id="privateCheckBox" layoutX="14.0" layoutY="395.0" style="-fx-text-fill: #000000;" text="¿Quieres que sea privada?">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </CheckBox>
-        <Button fx:id="nextButton" layoutX="16.0" layoutY="583.0" prefHeight="50.0" prefWidth="418.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 8; -fx-text-fill: #FFFFFF;" text="Siguiente">
+        <Button fx:id="nextButton" layoutX="16.0" layoutY="583.0" prefHeight="50.0" prefWidth="418.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 8; -fx-text-fill: #FFFFFF;" text="Crear">
             <font>
                 <Font size="16.0" />
             </font>
         </Button>
-      <ComboBox layoutX="20.0" layoutY="442.0" prefHeight="50.0" prefWidth="418.0" promptText="Tipo de oportunidad" />
+      <ComboBox fx:id="tipoOportunidadComboBox" layoutX="20.0" layoutY="442.0" prefHeight="40.0" prefWidth="418.0" promptText="Tipo de oportunidad" />
+      <Label layoutX="20.0" layoutY="407.0" text="Elige que tipo de oportunidad estas creando" textFill="#000000">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

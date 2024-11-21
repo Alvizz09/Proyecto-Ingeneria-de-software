@@ -21,22 +21,22 @@
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tus oportunidades" wrappingWidth="235.287109375">
+      <Text layoutX="26.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tus oportunidades" wrappingWidth="235.287109375">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
       </Text>
-      <ScrollPane layoutX="33.0" layoutY="324.0" prefHeight="173.0" prefWidth="386.0">
+      <ScrollPane layoutX="32.0" layoutY="271.0" prefHeight="173.0" prefWidth="386.0">
          <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="385.0" />
          </content>
       </ScrollPane>
-      <ImageView fx:id="DescubrirButton" fitHeight="45.0" fitWidth="45.0" layoutX="101.0" layoutY="616.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="DescubrirButton" fitHeight="45.0" fitWidth="47.0" layoutX="92.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@../Imagenes/Flecha.png" />
          </image>
       </ImageView>
-      <Text layoutX="94.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubrir" wrappingWidth="59.419921875">
+      <Text layoutX="85.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubrir" wrappingWidth="59.419921875">
          <font>
             <Font name="Nirmala UI Semilight" size="14.0" />
          </font>
@@ -50,6 +50,12 @@
             <Font name="Nirmala UI Semilight" size="14.0" />
          </font>
       </Text>
-      <ComboBox fx:id="interesesComboBox" layoutX="33.0" layoutY="140.0" prefHeight="38.0" prefWidth="386.0" promptText="Intereses" style="-fx-background-color: ffffff; -fx-border-color: e4e4e4;" />
+      <ComboBox fx:id="interesesComboBox" layoutX="32.0" layoutY="152.0" prefHeight="38.0" prefWidth="386.0" promptText="Intereses" style="-fx-background-color: ffffff; -fx-border-color: e4e4e4;" />
+      <Text layoutX="37.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Te gusto algo?, elige a que poryecto quieres colaboral" wrappingWidth="376.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="interesesComboBox1" layoutX="32.0" layoutY="508.0" prefHeight="38.0" prefWidth="386.0" promptText="Intereses" style="-fx-background-color: ffffff; -fx-border-color: e4e4e4;" />
    </children>
 </AnchorPane>
