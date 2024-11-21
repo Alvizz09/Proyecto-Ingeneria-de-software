@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.util.UUID;
 
 public class RegistroController {
@@ -85,9 +86,8 @@ public class RegistroController {
 
             boolean registrado = Sistema.registrarUsuario(idUsuario, nombre, apellido, correo, contrasena, edad, carrera, universidad);
             if (registrado) {
-                mostrarMensaje("Usuario registrado con éxito");
+                SceneManager.getInstance().switchScene("../recursos/BuscarOportunidadView.fxml", false);
                 // Enviar correo de confirmación
-                emailSender.sendEmail(correo, "Registro Exitoso", "Gracias por registrarte en nuestro servicio.");
             } else {
                 mostrarMensaje("Error: El correo ya está registrado.");
             }
@@ -95,8 +95,8 @@ public class RegistroController {
             mostrarMensaje("Ingrese un número válido en la edad");
         } catch (IllegalArgumentException e) {
             mostrarMensaje(e.getMessage());
-        } catch (Exception e) {
-            mostrarMensaje("Error al registrar usuario");
+        } catch (IOException e) {
+            mostrarMensaje(e.getMessage());
         }
     }
 

@@ -9,9 +9,9 @@ import javafx.scene.control.TextField;
 public class MenuPrincipalController {
 
     @FXML
-    public Button crearOportunidad;
+    public Button CrearButton;
     @FXML
-    public Button descubrirOportunidad;
+    public Button BuscarButton;
 
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -22,7 +22,7 @@ public class MenuPrincipalController {
     }
 
     @FXML
-    public void crearOportunidadOnAction() {
+    public void CrearButtonOnAction() {
         try {
             SceneManager.getInstance().switchScene("../recursos/CrearTipoOportunidadesView.fxml", false);
         } catch (Exception e) {
@@ -31,7 +31,7 @@ public class MenuPrincipalController {
     }
 
     @FXML
-    public void descubrirOportunidadOnAction() {
+    public void BuscarButtonOnAction() {
         try {
             SceneManager.getInstance().switchScene("../recursos/BuscarOportunidadView.fxml", false);
         } catch (Exception e) {
