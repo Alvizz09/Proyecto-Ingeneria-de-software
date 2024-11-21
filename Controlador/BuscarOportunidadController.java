@@ -5,7 +5,6 @@ import Modelo.Oportunidad;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
@@ -37,19 +36,37 @@ public class BuscarOportunidadController {
     @FXML
     private void filtrarOportunidades() {
         String filtro = interesesComboBox.getValue();
-        String tagsFiltro = TagsBuscarTextArea.getText().trim();
+        String tagsFiltro = SeleccionInteresComboBox.getValue();
         ArrayList<Oportunidad> oportunidades = conexionBaseDatos.getOportunidadesDb();
         ArrayList<Oportunidad> filtradas = new ArrayList<>();
+        ArrayList<String> tagsList = new ArrayList<>();
 
-        for (Oportunidad oportunidad : oportunidades)
-        {
-            if (oportunidad.getTipo().equals(filtro) && oportunidad.getTags().contains(tagsFiltro))
-            {
-                filtradas.add(oportunidad);
+        for (Oportunidad oportunidad : oportunidades) {
+            // Extraer los tags y guardarlos en tagsList
+            String[] tagsArray = oportunidad.getTags().split(",");
+            for (String tag : tagsArray) {
+                tagsList.add(tag.trim());
             }
+
+            // Imprimir la oportunidad actual
+            System.out.println("Oportunidad: " + oportunidad.getNombre());
+            System.out.println("Tags: " + tagsList);
+            System.out.println("Tipo: " + oportunidad.getTipo());
+
+            if (oportunidad.getTipo().equals(filtro)) {
+                filtradas.add(oportunidad);
+                System.out.println("Esta sirve: " + oportunidad.getNombre());
+            }
+            else {System.out.println("Esta NO sirve: " + oportunidad.getNombre());}
+
+            // Limpiar la lista de tags para la siguiente iteración
+            tagsList.clear();
         }
 
         mostrarOportunidades(filtradas);
+        imprimirOportunidadesEnTerminal(filtradas);
+
+        
 
     }
 
@@ -64,6 +81,18 @@ public class BuscarOportunidadController {
             sb.append("Owner: ").append(oportunidad.getOwner()).append("\n\n");
         }
         mostrarOportunidades.setText(sb.toString());
+    }
+
+    private void imprimirOportunidadesEnTerminal(ArrayList<Oportunidad> oportunidades) {
+        for (Oportunidad oportunidad : oportunidades) {
+            System.out.println("Nombre: " + oportunidad.getNombre());
+            System.out.println("Descripción: " + oportunidad.getDescripcion());
+            System.out.println("Tags: " + oportunidad.getTags());
+            System.out.println("Tipo: " + oportunidad.getTipo());
+            System.out.println("Miembros: " + String.join(", ", oportunidad.getMiembros()));
+            System.out.println("Owner: " + oportunidad.getOwner());
+            System.out.println();
+        }
     }
 
     public String getSelectedInteres()
