@@ -64,15 +64,6 @@ public class RegistroController {
     }
 
     @FXML
-    public void nextRegButtonOnAction() {
-        try {
-            SceneManager.getInstance().switchScene("../recursos/RegistrarUsuario2View.fxml", false);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
     private void registrarUsuario() {
         try {
             String idUsuario = UUID.randomUUID().toString();
