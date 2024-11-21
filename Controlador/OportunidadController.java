@@ -27,7 +27,7 @@ public class OportunidadController {
     @FXML
     private TextArea descriptionInput;
     @FXML
-    private TextField tagsInput;
+    private TextArea creartagsInput;
     @FXML
     private Button nextButton;
     @FXML
@@ -57,7 +57,7 @@ public class OportunidadController {
         String nombre = nameInput.getText();
         String descripcion = descriptionInput.getText();
         boolean esPrivada = false;
-        ArrayList<String> tags = new ArrayList<>(Arrays.asList(tagsInput.getText().split(",")));
+        ArrayList<String> tags = new ArrayList<>(Arrays.asList(creartagsInput.getText().split(",")));
         String tipo = tipoOportunidadComboBox.getValue();
         ArrayList<String> miembros = new ArrayList<>();
         String owner = Sistema.getUsuarioActual().getIdUsuario();

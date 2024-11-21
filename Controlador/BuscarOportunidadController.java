@@ -7,11 +7,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 
 public class BuscarOportunidadController {
 
+    @FXML
+    public ImageView DescubrirButton;
     @FXML
     private ComboBox<String> interesesComboBox, SeleccionInteresComboBox;
     @FXML
@@ -47,9 +50,21 @@ public class BuscarOportunidadController {
         }
 
         oportunidadesListView.getItems().setAll(filtradas);
+        mostrarOportunidades(filtradas);
     }
 
-    
+    private void mostrarOportunidades(ArrayList<Oportunidad> oportunidades) {
+        StringBuilder sb = new StringBuilder();
+        for (Oportunidad oportunidad : oportunidades) {
+            sb.append("Nombre: ").append(oportunidad.getNombre()).append("\n");
+            sb.append("Descripción: ").append(oportunidad.getDescripcion()).append("\n");
+            sb.append("Tags: ").append(String.join(", ", oportunidad.getTags())).append("\n");
+            sb.append("Tipo: ").append(oportunidad.getTipo()).append("\n");
+            sb.append("Miembros: ").append(String.join(", ", oportunidad.getMiembros())).append("\n");
+            sb.append("Owner: ").append(oportunidad.getOwner()).append("\n\n");
+        }
+        mostrarOportunidades.setText(sb.toString());
+    }
 
     public String getSelectedInteres()
     {
