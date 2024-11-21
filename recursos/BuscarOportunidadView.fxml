@@ -26,9 +26,9 @@
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
       </Text>
-      <ImageView fx:id="DescubrirButton" fitHeight="45.0" fitWidth="47.0" layoutX="92.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="DescubrirButton" fitHeight="45.0" fitWidth="47.0" layoutX="92.0" layoutY="618.0" onMouseClicked="#volverMenu" pickOnBounds="true" preserveRatio="true" rotate="360.0">
          <image>
-            <Image url="@../Imagenes/Flecha.png" />
+            <Image url="@../Imagenes/Home.png" />
          </image>
       </ImageView>
       <Text layoutX="85.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubrir" wrappingWidth="59.419921875">
@@ -36,7 +36,7 @@
             <Font name="Nirmala UI Semilight" size="14.0" />
          </font>
       </Text>
-      <ImageView fx:id="ImpulsaButton" fitHeight="56.0" fitWidth="67.0" layoutX="269.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ImpulsaButton" fitHeight="56.0" fitWidth="67.0" layoutX="269.0" layoutY="619.0" onMouseClicked="#impulsarButtonOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagenes/masImagen.png" />
          </image></ImageView>
@@ -59,6 +59,7 @@
       </Text>
       <TextArea fx:id="TagsBuscarTextArea" layoutX="33.0" layoutY="193.0" prefHeight="38.0" prefWidth="386.0" promptText="Tags de interes " />
       <Button fx:id="buscarOportunidadButton" layoutX="341.0" layoutY="235.0" mnemonicParsing="false" onAction="#filtrarOportunidades" prefHeight="32.0" prefWidth="78.0" text="Buscar" />
-      <TextArea fx:id="mostrarOportunidades" disable="true" editable="false" layoutX="32.0" layoutY="299.0" prefHeight="159.0" prefWidth="386.0" promptText="Tags de interes " />
+      <TextArea fx:id="mostrarOportunidades" editable="false" layoutX="32.0" layoutY="299.0" prefHeight="159.0" prefWidth="386.0" promptText="Tags de interes " />
+      <Button fx:id="confimarSeleccionButton" layoutX="188.0" layoutY="594.0" mnemonicParsing="false" onAction="#elegirOportunidadButtonOnAction" text="Confirmar" />
    </children>
 </AnchorPane>

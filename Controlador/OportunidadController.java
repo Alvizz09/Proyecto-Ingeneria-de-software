@@ -35,7 +35,7 @@ public class OportunidadController {
     @FXML
     private ComboBox<String> tipoOportunidadComboBox;
 
-    ObservableList<String> TipoOportunidad = FXCollections.observableArrayList("Startups", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
+    ObservableList<String> TipoOportunidad = FXCollections.observableArrayList("Startup", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
 
     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
 
@@ -58,7 +58,8 @@ public class OportunidadController {
         });
     }
 
-    private void crearOportunidad() throws IOException {
+    @FXML
+    public void crearOportunidad() throws IOException {
         String id = UUID.randomUUID().toString();
         String nombre = nameInput.getText();
         String descripcion = descriptionInput.getText();
@@ -78,6 +79,7 @@ public class OportunidadController {
         }
     }
 
+    @FXML
     private void volver() throws IOException {
         SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
     }
@@ -88,5 +90,11 @@ public class OportunidadController {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    public void joinOportunidad() {
+        String id = Sistema.getUsuarioActual().getIdUsuario();
+
+
     }
 }

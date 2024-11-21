@@ -8,17 +8,19 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class BuscarOportunidadController {
 
     @FXML
     public ImageView DescubrirButton;
+
     @FXML
     private ComboBox<String> interesesComboBox, SeleccionInteresComboBox;
 
     @FXML
-    private Button buscarOportunidadButton;
+    private Button buscarOportunidadButton, confimarSeleccionButton, impulsarButton, volverButton;
 
     @FXML
     private TextArea TagsBuscarTextArea;
@@ -30,7 +32,7 @@ public class BuscarOportunidadController {
 
     @FXML
     private void initialize() {
-        interesesComboBox.getItems().addAll("Startups", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
+        interesesComboBox.getItems().addAll("Startup", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
     }
 
     @FXML
@@ -43,6 +45,7 @@ public class BuscarOportunidadController {
 
         for (Oportunidad oportunidad : oportunidades) {
             // Extraer los tags y guardarlos en tagsList
+
             String[] tagsArray = oportunidad.getTags().split(",");
             for (String tag : tagsArray) {
                 tagsList.add(tag.trim());
@@ -66,10 +69,9 @@ public class BuscarOportunidadController {
         mostrarOportunidades(filtradas);
         imprimirOportunidadesEnTerminal(filtradas);
 
-        
-
     }
 
+    @FXML
     private void mostrarOportunidades(ArrayList<Oportunidad> oportunidades) {
         StringBuilder sb = new StringBuilder();
         for (Oportunidad oportunidad : oportunidades) {
@@ -83,6 +85,7 @@ public class BuscarOportunidadController {
         mostrarOportunidades.setText(sb.toString());
     }
 
+    @FXML
     private void imprimirOportunidadesEnTerminal(ArrayList<Oportunidad> oportunidades) {
         for (Oportunidad oportunidad : oportunidades) {
             System.out.println("Nombre: " + oportunidad.getNombre());
@@ -95,10 +98,42 @@ public class BuscarOportunidadController {
         }
     }
 
+    @FXML
+    private void escogerOportunidad(ArrayList<String> nombresAceptadas)
+    {
+        SeleccionInteresComboBox.getItems().clear();
+        SeleccionInteresComboBox.getItems().addAll(nombresAceptadas);
+    }
+
+    @FXML
+    private void elegirOportunidadButtonOnAction() {
+        String seleccionadoNombre = SeleccionInteresComboBox.getValue();
+        ArrayList<Oportunidad> oportunidades = conexionBaseDatos.getOportunidadesDb();
+        Usuario usuarioActual = Sistema.getUsuarioActual();
+
+        for (Oportunidad oportunidad : oportunidades) {
+            if (oportunidad.getNombre().equals(seleccionadoNombre)) {
+                oportunidad.getMiembros().add(usuarioActual.getNombre());
+                break;
+            }
+        }
+    }
+
+    @FXML
     public String getSelectedInteres()
     {
         return interesesComboBox.getValue();
     }
 
+    @FXML
+    private void impulsarButtonOnAction() throws IOException {
+        SceneManager.getInstance().switchScene("../recursos/CrearOportunidad.fxml", false);
+    }
+
+
+    @FXML
+    private void volverMenu() throws IOException {
+        SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
+    }
 
 }

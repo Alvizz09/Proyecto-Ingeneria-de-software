@@ -9,9 +9,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ControladorPrincipal {
+    @FXML
     public Button salir;
+
     public Label mensajeInicioDeSesion;
+    @FXML
     public Button iniciarSesion;
+    @FXML
     public Button registrarse,registarEstudiante,registrarUniEmp,volver,confirmarRegistro;
     public PasswordField password;
     public TextField eMail;

@@ -100,6 +100,7 @@ public class RegistroController {
         }
     }
 
+    @FXML
     private String obtenerTexto(TextField textField) {
         String texto = textField.getText().trim();
         if (texto.isEmpty()) {
@@ -108,6 +109,7 @@ public class RegistroController {
         return texto;
     }
 
+    @FXML
     private String obtenerTextoComboBox(ComboBox comboBox) {
         String texto = comboBox.getSelectionModel().getSelectedItem().toString();
         if(texto.isEmpty()) {
@@ -116,6 +118,7 @@ public class RegistroController {
         return texto;
     }
 
+    @FXML
     private Integer obtenerEdad(TextField textField) {
         try {
             return Integer.parseInt(textField.getText().trim());
@@ -138,14 +141,17 @@ public class RegistroController {
             mostrarMensaje("Contraseña invalida");
     }
 
+    @FXML
     public void ListarCarreras(Event event) {
         LlenarCombo(comboCarrerButton,carreraList);
     }
 
+    @FXML
     public static void LlenarCombo(ComboBox<String> cmbCarreras, ObservableList<String> infoCarreras) {
         cmbCarreras.setItems(infoCarreras);
     }
 
+    @FXML
     public void listarUniversidad(Event event) {
         LlenarCombo(comboUniversidadButton,universidadList);
     }
