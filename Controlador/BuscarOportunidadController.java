@@ -17,8 +17,6 @@ public class BuscarOportunidadController {
     public ImageView DescubrirButton;
     @FXML
     private ComboBox<String> interesesComboBox, SeleccionInteresComboBox;
-    @FXML
-    private ListView<Oportunidad> oportunidadesListView;
 
     @FXML
     private Button buscarOportunidadButton;
@@ -49,7 +47,6 @@ public class BuscarOportunidadController {
             }
         }
 
-        oportunidadesListView.getItems().setAll(filtradas);
         mostrarOportunidades(filtradas);
     }
 
@@ -70,13 +67,6 @@ public class BuscarOportunidadController {
     {
         return interesesComboBox.getValue();
     }
-
-    public Oportunidad getSelectedOportunidad()
-    {
-        return oportunidadesListView.getSelectionModel().getSelectedItem();
-    }
-
-
 
 
 }

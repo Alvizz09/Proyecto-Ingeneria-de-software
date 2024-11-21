@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.OportunidadController">
     <children>
-        <Button fx:id="backButton" layoutX="16.0" layoutY="16.0" onAction="#volverMenu" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" text="&lt;--" textFill="WHITE" />
+        <Button fx:id="backButton" layoutX="16.0" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" text="&lt;--" textFill="WHITE" />
         <ImageView fitHeight="110.0" fitWidth="126.0" layoutX="340.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;">
             <image>
                 <Image url="@../Imagenes/LogoImpulse.png" />
@@ -24,7 +24,7 @@
                 <Font size="16.0" />
             </font>
         </Label>
-        <TextArea fx:id="descriptionInput" disable="true" editable="false" layoutX="16.0" layoutY="186.0" prefHeight="186.0" prefWidth="418.0" promptText="Escribe aquí" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
+        <TextArea fx:id="descriptionInput" layoutX="16.0" layoutY="186.0" prefHeight="186.0" prefWidth="418.0" promptText="Escribe aquí" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
         <Button fx:id="nextButton" layoutX="16.0" layoutY="600.0" prefHeight="50.0" prefWidth="418.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 8; -fx-text-fill: #FFFFFF;" text="Crear">
             <font>
                 <Font size="16.0" />

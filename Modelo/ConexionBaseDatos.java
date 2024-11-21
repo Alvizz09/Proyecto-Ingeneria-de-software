@@ -10,7 +10,6 @@ public class ConexionBaseDatos {
     private MongoClient mongoClient;
     private MongoDatabase database;
 
-    // Constructor que inicializa la conexión
     public ConexionBaseDatos() {
         conectar();
     }

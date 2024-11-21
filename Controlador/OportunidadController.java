@@ -42,7 +42,13 @@ public class OportunidadController {
     @FXML
     private void initialize() {
         tipoOportunidadComboBox.setItems(TipoOportunidad);
-        nextButton.setOnAction(event -> crearOportunidad());
+        nextButton.setOnAction(event -> {
+            try {
+                crearOportunidad();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
         backButton.setOnAction(event -> {
             try {
                 volver();
@@ -52,7 +58,7 @@ public class OportunidadController {
         });
     }
 
-    private void crearOportunidad() {
+    private void crearOportunidad() throws IOException {
         String id = UUID.randomUUID().toString();
         String nombre = nameInput.getText();
         String descripcion = descriptionInput.getText();
@@ -65,13 +71,14 @@ public class OportunidadController {
         boolean creada = Sistema.crearOportunidad(id, nombre, descripcion, esPrivada, tags, tipo, miembros, owner);
         if (creada) {
             mostrarMensaje("Oportunidad creada exitosamente.");
+            volver();
         } else {
             mostrarMensaje("Error al crear la oportunidad.");
         }
     }
 
     private void volver() throws IOException {
-        // Lógica para volver a la pantalla anterior
+        SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
     }
 
     private void mostrarMensaje(String mensaje) {
