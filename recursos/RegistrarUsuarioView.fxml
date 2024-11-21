@@ -3,9 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="731.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.RegistroController">
     <children>
@@ -33,7 +30,7 @@
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font></Button>
-      <TextField fx:id="carreerTextField" layoutX="102.0" layoutY="515.0" prefHeight="55.0" prefWidth="361.0" promptText="Carrera" />
       <TextField fx:id="universityTextField" layoutX="102.0" layoutY="576.0" prefHeight="55.0" prefWidth="361.0" promptText="Universidad" />
+      <ComboBox fx:id="ComboCarrerButton" layoutX="101.0" layoutY="515.0" onShowing="#ListarCarreras" prefHeight="55.0" prefWidth="361.0" promptText="Carrera" />
     </children>
 </AnchorPane>

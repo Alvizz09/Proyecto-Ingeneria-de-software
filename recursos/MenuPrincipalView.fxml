@@ -1,13 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recursos.MenuPrincipalView">
    <children>
-      <Button layoutX="46.0" layoutY="245.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" text="Button" />
-      <Button layoutX="46.0" layoutY="336.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" text="Button" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="125.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="BuscarButton" layoutX="46.0" layoutY="249.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Descubrir" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font></Button>
+      <ImageView fitHeight="150.0" fitWidth="163.0" layoutX="150.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/LogoImpulse.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="95.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido, selecciona una opcion" textAlignment="CENTER" wrappingWidth="260.13671875">
+         <font>
+            <Font name="Nirmala UI Semilight" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="CrearButton" layoutX="46.0" layoutY="331.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Impulsa" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="CrearButton" fitHeight="45.0" fitWidth="70.0" layoutX="320.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/masImagen.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="BuscarButton" fitHeight="45.0" fitWidth="45.0" layoutX="73.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@../Imagenes/Flecha.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="62.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubrir">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="HomeButton" fitHeight="45.0" fitWidth="55.0" layoutX="203.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/Home.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="204.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Impulsa">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="CrearButton1" layoutX="46.0" layoutY="414.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Mis oportunidades" textFill="WHITE">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

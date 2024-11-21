@@ -2,9 +2,13 @@ package Controlador;
 
 import Modelo.Sistema;
 import Modelo.EmailSender;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import java.util.UUID;
@@ -15,7 +19,12 @@ public class RegistroController {
     @FXML
     private TextField emailTextField, passwordTextField, emailRegTextField, passwordRegTextField, nombresRegTextField, ageRegTextField, apellidoRegTextField, carreerTextField, universityTextField, emailField;
 
+    @FXML
+    private ComboBox ComboCarrerButton;
+
     private EmailSender emailSender = new EmailSender();
+
+    ObservableList<String> carreraList = FXCollections.observableArrayList("Ingenieria sistemas","Administrracion","Artes");
 
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -71,7 +80,7 @@ public class RegistroController {
             String correo = obtenerTexto(emailRegTextField);
             String contrasena = obtenerTexto(passwordRegTextField);
             Integer edad = obtenerEdad(ageRegTextField);
-            String carrera = obtenerTexto(carreerTextField);
+            String carrera = obtenerTextoComboBox(ComboCarrerButton);
             String universidad = obtenerTexto(universityTextField);
 
             boolean registrado = Sistema.registrarUsuario(idUsuario, nombre, apellido, correo, contrasena, edad, carrera, universidad);
@@ -99,6 +108,14 @@ public class RegistroController {
         return texto;
     }
 
+    private String obtenerTextoComboBox(ComboBox comboBox) {
+        String texto = comboBox.getSelectionModel().getSelectedItem().toString();
+        if(texto.isEmpty()) {
+            throw new IllegalArgumentException("Todos los campos deben estar llenos");
+        }
+        return texto;
+    }
+
     private Integer obtenerEdad(TextField textField) {
         try {
             return Integer.parseInt(textField.getText().trim());
@@ -115,5 +132,13 @@ public class RegistroController {
             mostrarMensaje("Inicio de sesion exitoso");
         else
             mostrarMensaje("Contraseña invalida");
+    }
+
+    public void ListarCarreras(Event event) {
+        LlenarCombo(ComboCarrerButton,carreraList);
+    }
+
+    public static void LlenarCombo(ComboBox<String> cmbCarreras, ObservableList<String> infoCarreras) {
+        cmbCarreras.setItems(infoCarreras);
     }
 }
