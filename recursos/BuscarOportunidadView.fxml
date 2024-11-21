@@ -46,7 +46,7 @@
          </font>
       </Text>
       <ComboBox fx:id="interesesComboBox" layoutX="32.0" layoutY="124.0" prefHeight="38.0" prefWidth="386.0" promptText="Intereses" style="-fx-background-color: ffffff; -fx-border-color: e4e4e4;" />
-      <Text layoutX="37.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Te gusto algo?, elige a que poryecto quieres colaboral" wrappingWidth="376.287109375">
+      <Text layoutX="37.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Te gusto algo?, elige a que proyecto quieres colaboral" wrappingWidth="376.287109375">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
