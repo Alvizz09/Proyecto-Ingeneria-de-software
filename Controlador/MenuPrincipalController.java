@@ -67,13 +67,12 @@ public class MenuPrincipalController {
     }
 
     @FXML
-    public void HomeButtonOnAction()
-    {
-        /*try {
-            SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
+    public void HomeButtonOnAction() {
+        try {
+            SceneManager.getInstance().switchScene("../recursos/IniciarSesionView.fxml", false);
         } catch (Exception e) {
             e.printStackTrace();
-        } */
-    }
+        }
 
+    }
 }

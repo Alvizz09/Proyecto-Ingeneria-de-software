@@ -70,7 +70,7 @@ public class OportunidadController {
         String owner = Sistema.getUsuarioActual().getIdUsuario();
 
         boolean creada = Sistema.crearOportunidad(id, nombre, descripcion, esPrivada, tags, tipo, miembros, owner);
-        if (creada) {
+        if (creada && !(nameInput.getText().isEmpty()) && !(tipoOportunidadComboBox.getValue().isEmpty())){
 
             mostrarMensaje("Oportunidad creada exitosamente.");
             volver();

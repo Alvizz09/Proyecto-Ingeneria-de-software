@@ -12,7 +12,7 @@
             <Font name="Yu Gothic Medium" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="descubiriButton" layoutX="46.0" layoutY="249.0" mnemonicParsing="false" onAction="#DescubrirButtonOnAction" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Descubrir" textFill="WHITE">
+      <Button fx:id="descubiriButton" layoutX="38.0" layoutY="250.0" mnemonicParsing="false" onAction="#DescubrirButtonOnAction" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Descubrir">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font></Button>
@@ -26,7 +26,7 @@
             <Font name="Nirmala UI Semilight" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="ImpulsaButton" layoutX="46.0" layoutY="331.0" mnemonicParsing="false" onAction="#ImpulsaButtonOnAction" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Impulsa" textFill="WHITE">
+      <Button fx:id="ImpulsaButton" layoutX="38.0" layoutY="330.0" mnemonicParsing="false" onAction="#ImpulsaButtonOnAction" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Impulsa">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
@@ -41,12 +41,12 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <ImageView fx:id="HomeButton" disable="true" fitHeight="45.0" fitWidth="55.0" layoutX="203.0" layoutY="578.0" onDragDetected="#CrearButtonOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="HomeButton" disable="true" fitHeight="45.0" fitWidth="55.0" layoutX="194.0" layoutY="578.0" onMouseClicked="#HomeButtonOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagenes/Home.png" />
          </image>
       </ImageView>
-      <Text layoutX="204.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home">
+      <Text layoutX="170.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cerrar Sesion">
          <font>
             <Font size="16.0" />
          </font>
@@ -56,7 +56,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button fx:id="misOportunidadesButton" layoutX="46.0" layoutY="414.0" mnemonicParsing="false" onAction="#MisOportunidadesButtonOnAction" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Mis oportunidades" textFill="WHITE">
+      <Button fx:id="misOportunidadesButton" layoutX="38.0" layoutY="414.0" mnemonicParsing="false" onAction="#MisOportunidadesButtonOnAction" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Mis oportunidades">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
