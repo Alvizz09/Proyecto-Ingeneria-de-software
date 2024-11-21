@@ -86,7 +86,7 @@ public class RegistroController {
 
             boolean registrado = Sistema.registrarUsuario(idUsuario, nombre, apellido, correo, contrasena, edad, carrera, universidad);
             if (registrado) {
-                SceneManager.getInstance().switchScene("../recursos/BuscarOportunidadView.fxml", false);
+                SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
                 // Enviar correo de confirmación
             } else {
                 mostrarMensaje("Error: El correo ya está registrado.");

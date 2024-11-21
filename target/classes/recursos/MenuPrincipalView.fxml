@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recursos.MenuPrincipalView">
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
    <children>
       <Button fx:id="BuscarButton" layoutX="46.0" layoutY="249.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Descubrir" textFill="WHITE">
          <font>
