@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recursos.OportunidadesView">
+   <children>
+      <Button fx:id="StrartupsButton" layoutX="65.0" layoutY="125.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="320.0" style="-fx-background-color: #f5f5f5;" text="Startups" />
+      <ImageView fitHeight="125.0" fitWidth="124.0" layoutX="3.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <clip>
+            <Circle centerX="62.0" centerY="62.0" radius="62.0" />
+         </clip>
+         <image>
+            <Image url="@../Imagenes/LogoImpulse.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="131.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear tus oportunidades" wrappingWidth="279.220703125">
+         <font>
+            <Font name="Nirmala UI Semilight" size="26.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="71.0" fitWidth="71.0" layoutX="314.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <clip>
+            <Circle centerX="35.5" centerY="35.5" radius="35.5" />
+         </clip>
+         <image>
+            <Image url="@../Imagenes/Starupsimage.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ProyectosButton" layoutX="62.0" layoutY="211.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="327.0" style="-fx-background-color: #f5f5f5;" text="Proyectos" />
+      <Button fx:id="grupoEstButton" layoutX="62.0" layoutY="297.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="327.0" style="-fx-background-color: #f5f5f5;" text="Grupo estudiantil" />
+      <Button fx:id="semilleroButton" layoutX="62.0" layoutY="382.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="327.0" style="-fx-background-color: #f5f5f5;" text="Semillero" />
+      <Button fx:id="otroButton" layoutX="62.0" layoutY="468.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="327.0" style="-fx-background-color: #f5f5f5;" text="Otro" />
+      <ImageView fitHeight="71.0" fitWidth="71.0" layoutX="317.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+         <clip>
+            <Circle centerX="35.5" centerY="35.5" radius="35.5" />
+         </clip>
+         <image>
+            <Image url="@../Imagenes/ProyectosImage.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="misOportButton" layoutX="62.0" layoutY="552.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="327.0" style="-fx-background-color: #4ed967;" text="Mis oportunidades" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <ImageView fitHeight="71.0" fitWidth="71.0" layoutX="317.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+         <clip>
+            <Circle centerX="35.5" centerY="35.5" radius="35.5" />
+         </clip>
+         <image>
+            <Image url="@../Imagenes/GrupoEstudiantilImage.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="71.0" fitWidth="71.0" layoutX="317.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+         <clip>
+            <Circle centerX="35.5" centerY="35.5" radius="35.5" />
+         </clip>
+         <image>
+            <Image url="@../Imagenes/SemilleroImage.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

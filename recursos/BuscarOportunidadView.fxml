@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recursos.BuscarOportunidadView">
+   <children>
+      <ImageView fitHeight="114.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/LogoImpulse.png" />
+         </image></ImageView>
+      <Text layoutX="108.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubre oportunidades" wrappingWidth="264.13671875">
+         <font>
+            <Font name="Nirmala UI Semilight" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que cosas te interesan?" wrappingWidth="235.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
