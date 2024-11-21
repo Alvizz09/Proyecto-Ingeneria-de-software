@@ -6,11 +6,15 @@ public class Sistema {
     private static ConexionBaseDatos conexionBaseDatos;
     private static ArrayList<Usuario> usuarios;
     private static ArrayList<Oportunidad> oportunidades;
+    private static ArrayList<Carreras> Carreras;
+    private static ArrayList<Universidad> Universidades;
 
     public Sistema() {
         conexionBaseDatos = new ConexionBaseDatos();
         usuarios = conexionBaseDatos.getUserDb();
         oportunidades = conexionBaseDatos.getOportunidadesDb();
+        Carreras = conexionBaseDatos.getCarrerasDb();
+        Universidades = conexionBaseDatos.getUniversidadesDb();
         System.out.println( usuarios);
         System.out.println( oportunidades);
     }

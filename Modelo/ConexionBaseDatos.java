@@ -159,4 +159,39 @@ public class ConexionBaseDatos {
         }
     }
 
+    public ArrayList<Carreras> getCarrerasDb() {
+        ArrayList<Carreras> carreras = new ArrayList<>();
+        try {
+            MongoCollection<Document> collection = database.getCollection("Carreras");
+            for (Document doc : collection.find()) {
+                Carreras carrera = new Carreras(
+                        doc.getString("nombreCarrera")
+                );
+                carreras.add(carrera);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al obtener las carreras.");
+        }
+        return carreras;
+    }
+
+    public ArrayList<Universidad> getUniversidadesDb() {
+        ArrayList<Universidad> universidades = new ArrayList<>();
+        try {
+            MongoCollection<Document> collection = database.getCollection("Universidades");
+            for (Document doc : collection.find()) {
+                Universidad universidad = new Universidad(
+                        doc.getString("nombre"),
+                        doc.getInteger("id")
+                );
+                universidades.add(universidad);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al obtener las universidades.");
+        }
+        return universidades;
+    }
+
 }
