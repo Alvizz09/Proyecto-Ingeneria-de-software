@@ -18,7 +18,7 @@ public class InterfazApp extends Application {
         Parent root= FXMLLoader.load(getClass().getResource("../recursos/MainView.fxml"));
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Impulse");
-        primaryStage.setScene(new Scene(root, 520,400));
+        primaryStage.setScene(new Scene(root, 540,700));
         primaryStage.show();
         Sistema sistema = new Sistema();
     }
