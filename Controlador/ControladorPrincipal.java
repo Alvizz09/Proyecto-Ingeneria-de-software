@@ -33,7 +33,6 @@ public class ControladorPrincipal {
         stage.close();
     }
 
-
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Mensaje");
@@ -41,6 +40,7 @@ public class ControladorPrincipal {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+
     @FXML
     private void validarRegistro(){
 

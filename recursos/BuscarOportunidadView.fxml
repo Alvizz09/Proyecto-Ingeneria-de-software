@@ -36,6 +36,24 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="385.0" />
          </content>
       </ScrollPane>
-      <Button layoutX="265.0" layoutY="624.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="63.0" />
+      <ImageView fx:id="DescubrirButton" fitHeight="40.0" fitWidth="46.0" layoutX="104.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+         <image>
+            <Image url="@../Imagenes/Flecha.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="94.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubrir" wrappingWidth="59.419921875">
+         <font>
+            <Font name="Nirmala UI Semilight" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="ImpulsaButton" fitHeight="56.0" fitWidth="67.0" layoutX="269.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/masImagen.png" />
+         </image></ImageView>
+      <Text layoutX="279.0" layoutY="673.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Impulsa" wrappingWidth="47.478515625">
+         <font>
+            <Font name="Nirmala UI Semilight" size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
