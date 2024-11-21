@@ -31,12 +31,13 @@ public class ControladorPrincipal {
             e.printStackTrace();
         }
     }
-
+    @FXML
     public void salirOnAction(){
         Stage stage= (Stage) salir.getScene().getWindow();
         stage.close();
     }
 
+    @FXML
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Mensaje");
@@ -61,6 +62,7 @@ public class ControladorPrincipal {
             e.printStackTrace();
         }
     }
+    @FXML
     public void registroUniEmpoOnAction() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../resource/RegistroEmpresa/UniversidadView.fxml"));

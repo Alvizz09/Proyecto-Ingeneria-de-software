@@ -25,6 +25,7 @@ public class RegistroController {
     ObservableList<String> carreraList = FXCollections.observableArrayList("Ingenieria sistemas","Administrracion","Artes");
     ObservableList<String> universidadList = FXCollections.observableArrayList("Javeriana","Andes");
 
+    @FXML
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Mensaje");

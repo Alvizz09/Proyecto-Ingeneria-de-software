@@ -2,6 +2,8 @@ package Controlador;
 
 import Modelo.ConexionBaseDatos;
 import Modelo.Oportunidad;
+import Modelo.Usuario;
+import Modelo.Sistema;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -42,6 +44,7 @@ public class BuscarOportunidadController {
         ArrayList<Oportunidad> oportunidades = conexionBaseDatos.getOportunidadesDb();
         ArrayList<Oportunidad> filtradas = new ArrayList<>();
         ArrayList<String> tagsList = new ArrayList<>();
+        ArrayList<String> nombresAceptados = new ArrayList<>();
 
         for (Oportunidad oportunidad : oportunidades) {
             // Extraer los tags y guardarlos en tagsList
@@ -57,6 +60,7 @@ public class BuscarOportunidadController {
             System.out.println("Tipo: " + oportunidad.getTipo());
 
             if (oportunidad.getTipo().equals(filtro)) {
+                nombresAceptados.add(oportunidad.getNombre());
                 filtradas.add(oportunidad);
                 System.out.println("Esta sirve: " + oportunidad.getNombre());
             }
@@ -68,6 +72,7 @@ public class BuscarOportunidadController {
 
         mostrarOportunidades(filtradas);
         imprimirOportunidadesEnTerminal(filtradas);
+        escogerOportunidad(nombresAceptados);
 
     }
 
@@ -114,6 +119,7 @@ public class BuscarOportunidadController {
         for (Oportunidad oportunidad : oportunidades) {
             if (oportunidad.getNombre().equals(seleccionadoNombre)) {
                 oportunidad.getMiembros().add(usuarioActual.getNombre());
+                conexionBaseDatos.actualizarOportunidad(oportunidad, usuarioActual);
                 break;
             }
         }

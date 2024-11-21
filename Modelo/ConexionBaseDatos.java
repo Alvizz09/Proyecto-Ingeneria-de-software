@@ -1,8 +1,10 @@
 package Modelo;
 
 import com.mongodb.client.*;
+import javafx.fxml.FXML;
 import org.bson.Document;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
 public class ConexionBaseDatos {
@@ -15,6 +17,7 @@ public class ConexionBaseDatos {
     }
 
     // Método para conectar a MongoDB
+    @FXML
     public void conectar() {
         String connectionString = "mongodb+srv://alvarezrjsebastian:PuyOEFgv0w8Aou3o@proyectofundamentos.fcgji.mongodb.net/?retryWrites=true&w=majority&appName=ProyectoFundamentos";
         try {
@@ -30,6 +33,7 @@ public class ConexionBaseDatos {
     }
 
     // Método para cerrar la conexión
+    @FXML
     public void cerrarConexion() {
         if (mongoClient != null) {
             mongoClient.close();
@@ -39,6 +43,7 @@ public class ConexionBaseDatos {
     }
 
     // Método para obtener los usuarios
+    @FXML
     public ArrayList<Usuario> getUserDb() {
         ArrayList<Usuario> users = new ArrayList<>();
         try {
@@ -63,6 +68,7 @@ public class ConexionBaseDatos {
     }
 
     // Método para obtener las oportunidades
+    @FXML
     public ArrayList<Oportunidad> getOportunidadesDb() {
         ArrayList<Oportunidad> oportunidades = new ArrayList<>();
         try {
@@ -88,6 +94,7 @@ public class ConexionBaseDatos {
         return oportunidades;
     }
 
+    @FXML
     public boolean guardarUsuario(Usuario usuario) {
         try {
 
@@ -123,6 +130,7 @@ public class ConexionBaseDatos {
         }
     }
 
+    @FXML
     public boolean existeUsuarioPorCorreo(String correo) {
         try {
             MongoCollection<Document> collection = database.getCollection("Usuarios");
@@ -136,6 +144,7 @@ public class ConexionBaseDatos {
         }
     }
 
+    @FXML
     public boolean guardarOportunidad(Oportunidad oportunidad) {
         try {
             MongoCollection<Document> collection = database.getCollection("Oportunidades");
@@ -160,6 +169,7 @@ public class ConexionBaseDatos {
         }
     }
 
+    @FXML
     public ArrayList<Carreras> getCarrerasDb() {
         ArrayList<Carreras> carreras = new ArrayList<>();
         try {
@@ -177,6 +187,7 @@ public class ConexionBaseDatos {
         return carreras;
     }
 
+    @FXML
     public ArrayList<Universidad> getUniversidadesDb() {
         ArrayList<Universidad> universidades = new ArrayList<>();
         try {
@@ -194,5 +205,34 @@ public class ConexionBaseDatos {
         }
         return universidades;
     }
+    /*public void actualizarOportunidad(Oportunidad oportunidad, Usuario nuevoMiembro) {
+        String query = "UPDATE oportunidades SET miembros = CONCAT(miembros, ?) WHERE id = ?";
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, ", " + nuevoMiembro.getNombre());
+            pstmt.setString(2, oportunidad.getId());
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }*/
 
+    public void actualizarOportunidad(Oportunidad oportunidad, Usuario nuevoMiembro) {
+        try {
+            MongoCollection<Document> collection = database.getCollection("Oportunidades");
+
+            // Crear el filtro para encontrar la oportunidad por id
+            Document filtro = new Document("idOportunidad", oportunidad.getIdOportunidad());
+
+            // Crear el documento de actualización para agregar el nuevo miembro
+            Document actualizacion = new Document("$addToSet", new Document("miembros", nuevoMiembro.getNombre()));
+
+            // Actualizar la oportunidad en la base de datos
+            collection.updateOne(filtro, actualizacion);
+            System.out.println("Oportunidad actualizada exitosamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al actualizar la oportunidad.");
+        }
+    }
 }
