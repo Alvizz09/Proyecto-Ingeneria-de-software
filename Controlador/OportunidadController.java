@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.UUID;
 
 public class OportunidadController {
@@ -26,60 +27,51 @@ public class OportunidadController {
     @FXML
     private TextArea descriptionInput;
     @FXML
+    private TextField tagsInput;
+    @FXML
     private Button nextButton;
     @FXML
     private Button backButton;
     @FXML
     private ComboBox<String> tipoOportunidadComboBox;
 
-    ObservableList<String> TipoOportunidad = FXCollections.observableArrayList("Strtup","Proyecto","Grupo estudiantil","Semillero","Otro");
+    ObservableList<String> TipoOportunidad = FXCollections.observableArrayList("Startup", "Proyecto", "Grupo estudiantil", "Semillero", "Otro");
 
     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
 
     @FXML
     private void initialize() {
+        tipoOportunidadComboBox.setItems(TipoOportunidad);
         nextButton.setOnAction(event -> crearOportunidad());
         backButton.setOnAction(event -> {
             try {
                 volver();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         });
-
-        tipoOportunidadComboBox.getItems().addAll("Startups", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
     }
 
-    @FXML
     private void crearOportunidad() {
-        try {
-            String idOportunidad = UUID.randomUUID().toString();
-            String nombre = nameInput.getText().trim();
-            String descripcion = descriptionInput.getText().trim();
-            String tipo = tipoOportunidadComboBox.getValue();
-            ArrayList<String> miembros = new ArrayList<>();
+        String id = UUID.randomUUID().toString();
+        String nombre = nameInput.getText();
+        String descripcion = descriptionInput.getText();
+        boolean esPrivada = false;
+        ArrayList<String> tags = new ArrayList<>(Arrays.asList(tagsInput.getText().split(",")));
+        String tipo = tipoOportunidadComboBox.getValue();
+        ArrayList<String> miembros = new ArrayList<>();
+        String owner = Sistema.getUsuarioActual().getIdUsuario();
 
-
-            Usuario usuarioActual = Sistema.getUsuarioActual(); // Obtener el usuario actual
-            String owner = usuarioActual.getIdUsuario();
-            boolean esPrivada = false;
-
-            if (nombre.isEmpty() || descripcion.isEmpty() || tipo == null) {
-                mostrarMensaje("Todos los campos deben estar llenos");
-                return;
-            }
-
-            boolean creado = Sistema.crearOportunidad(idOportunidad, nombre, descripcion, esPrivada, "", tipo, miembros, owner);
-            if (creado) {
-                mostrarMensaje("Oportunidad creada con éxito");
-                regresarMenu();
-            } else {
-                mostrarMensaje("Error al crear la oportunidad");
-            }
-        } catch (Exception e) {
-            mostrarMensaje("Error al crear la oportunidad");
-            e.printStackTrace();
+        boolean creada = Sistema.crearOportunidad(id, nombre, descripcion, esPrivada, tags, tipo, miembros, owner);
+        if (creada) {
+            mostrarMensaje("Oportunidad creada exitosamente.");
+        } else {
+            mostrarMensaje("Error al crear la oportunidad.");
         }
+    }
+
+    private void volver() throws IOException {
+        // Lógica para volver a la pantalla anterior
     }
 
     private void mostrarMensaje(String mensaje) {
@@ -89,32 +81,4 @@ public class OportunidadController {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-
-    @FXML
-    private void volver() throws IOException {
-        try {
-            SceneManager.getInstance().switchScene("../recursos/OportunidadInteresView.fxml", false);
-        } catch (IOException e) {
-            mostrarMensaje("Error al volver a la vista anterior");
-        }
-    }
-
-    @FXML
-    private void regresarMenu() throws IOException {
-        try {
-            SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
-        } catch (IOException e) {
-            mostrarMensaje("Error al volver a la vista anterior");
-        }
-    }
-
-    public void ListarTipo(Event event) {
-        LlenarCombo(tipoOportunidadComboBox,TipoOportunidad);
-    }
-
-    public static void LlenarCombo(ComboBox<String> cmbCarreras, ObservableList<String> infoCarreras) {
-        cmbCarreras.setItems(infoCarreras);
-    }
-
-
 }

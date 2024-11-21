@@ -1,20 +1,19 @@
 package Modelo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Oportunidad {
     private String idOportunidad;
     private String nombre;
     private String descripcion;
     private boolean esPrivada;
-    private String tags;
+    private ArrayList<String> tags;
     private String tipo;
     private ArrayList<String> miembros;
     private String owner;
 
     // Constructor
-    public Oportunidad(String idOportunidad, String nombre, String descripcion, boolean esPrivada, String tags, String tipo, ArrayList<String> miembros, String owner) {
+    public Oportunidad(String idOportunidad, String nombre, String descripcion, boolean esPrivada, ArrayList<String> tags, String tipo, ArrayList<String> miembros, String owner) {
         this.idOportunidad = idOportunidad;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -58,11 +57,11 @@ public class Oportunidad {
         this.esPrivada = esPrivada;
     }
 
-    public String getTags() {
+    public ArrayList<String> getTags() {
         return tags;
     }
 
-    public void setTags(String tags) {
+    public void setTags(ArrayList<String> tags) {
         this.tags = tags;
     }
 
@@ -88,19 +87,5 @@ public class Oportunidad {
 
     public void setOwner(String owner) {
         this.owner = owner;
-    }
-
-    @Override
-    public String toString() {
-        return "Oportunidad{" +
-                "idOportunidad='" + idOportunidad + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", esPrivada=" + esPrivada +
-                ", tags='" + tags + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", miembros=" + miembros +
-                ", owner=" + owner +
-                '}';
     }
 }

@@ -1,7 +1,6 @@
 package Controlador;
 
 import Modelo.Sistema;
-import Modelo.EmailSender;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
@@ -22,8 +21,6 @@ public class RegistroController {
 
     @FXML
     private ComboBox comboCarrerButton, comboUniversidadButton;
-
-    private EmailSender emailSender = new EmailSender();
 
     ObservableList<String> carreraList = FXCollections.observableArrayList("Ingenieria sistemas","Administrracion","Artes");
     ObservableList<String> universidadList = FXCollections.observableArrayList("Javeriana","Andes");

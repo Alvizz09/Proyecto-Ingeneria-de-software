@@ -4,6 +4,7 @@ import com.mongodb.client.*;
 import org.bson.Document;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ConexionBaseDatos {
     private MongoClient mongoClient;
@@ -68,12 +69,15 @@ public class ConexionBaseDatos {
         try {
             MongoCollection<Document> collection = database.getCollection("Oportunidades");
             for (Document doc : collection.find()) {
+                String tagsString = doc.getString("tags");
+                ArrayList<String> tags = new ArrayList<>(Arrays.asList(tagsString.split(",")));
+
                 Oportunidad oportunidad = new Oportunidad(
                         doc.getString("idOportunidad"),
                         doc.getString("nombre"),
                         doc.getString("descripcion"),
                         doc.getBoolean("esPrivada"),
-                        doc.getString("tags"),
+                        tags,
                         doc.getString("tipo"),
                         (ArrayList<String>) doc.getList("miembros", String.class),
                         doc.getString("owner")
@@ -144,7 +148,7 @@ public class ConexionBaseDatos {
                     .append("nombre", oportunidad.getNombre())
                     .append("descripcion", oportunidad.getDescripcion())
                     .append("esPrivada", oportunidad.isEsPrivada())
-                    .append("tags", oportunidad.getTags())
+                    .append("tags", String.join(",", oportunidad.getTags()))
                     .append("tipo", oportunidad.getTipo())
                     .append("miembros", oportunidad.getMiembros())
                     .append("owner", oportunidad.getOwner());
@@ -193,5 +197,4 @@ public class ConexionBaseDatos {
         }
         return universidades;
     }
-
 }
