@@ -24,7 +24,10 @@
       </Text>
       <TextField fx:id="emailTextField" layoutX="80.0" layoutY="257.0" prefHeight="55.0" prefWidth="361.0" promptText="Correo electronico" />
       <TextField fx:id="passwordTextField" layoutX="80.0" layoutY="350.0" prefHeight="55.0" prefWidth="361.0" promptText="Contraseña" />
-      <Button fx:id="loginButton" layoutX="80.0" layoutY="455.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="55.0" prefWidth="361.0" style="-fx-background-color: #4ed967;" text="Inicia Sesion" />
+      <Button fx:id="loginButton" layoutX="80.0" layoutY="455.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="55.0" prefWidth="361.0" style="-fx-background-color: #4ed967;" text="Inicia Sesion">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
       <Text layoutX="147.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No tienes una cuenta?" wrappingWidth="119.53515625" />
       <Text fill="#4ed967" layoutX="105.0" layoutY="629.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Impulse">
          <font>

@@ -27,9 +27,9 @@
             <Font name="Nirmala UI" size="16.0" />
          </font>
       </Text>
-      <Button fx:id="iniciarButton" layoutX="169.0" layoutY="610.0" mnemonicParsing="false" onAction="#iniciarButtonOnAction" prefHeight="53.0" prefWidth="213.0" style="-fx-background-color: #4ed967;" text="Impulsate!" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+      <Button fx:id="iniciarButton" layoutX="169.0" layoutY="610.0" mnemonicParsing="false" onAction="#iniciarButtonOnAction" prefHeight="53.0" prefWidth="213.0" style="-fx-background-color: #4ed967;" text="Impulsate!" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="Nirmala UI Semilight" size="12.0" />
+            <Font name="Nirmala UI Semilight" size="18.0" />
          </font></Button>
       <BorderPane layoutX="169.0" layoutY="685.0" prefHeight="19.0" prefWidth="200.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="685.0" />
    </children>

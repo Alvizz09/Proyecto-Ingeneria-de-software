@@ -26,7 +26,7 @@
       <TextField fx:id="passwordRegTextField" layoutX="70.0" layoutY="367.0" prefHeight="55.0" prefWidth="361.0" promptText="Contraseña" />
       <TextField fx:id="apellidoRegTextField" layoutX="70.0" layoutY="304.0" prefHeight="55.0" prefWidth="361.0" promptText="Apellido" />
       <TextField fx:id="ageRegTextField" layoutX="70.0" layoutY="432.0" prefHeight="55.0" prefWidth="361.0" promptText="Edad" />
-      <Button fx:id="finishRegButton" layoutX="70.0" layoutY="625.0" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="55.0" prefWidth="361.0" style="-fx-background-color: #4ed967;" text="Impulsame" textFill="WHITE">
+      <Button fx:id="finishRegButton" layoutX="70.0" layoutY="625.0" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="55.0" prefWidth="361.0" style="-fx-background-color: #4ed967;" text="Impulsame">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font></Button>
