@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <!-- Botón de regreso -->
+        <Button fx:id="backButton" layoutX="16.0" layoutY="23.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" />
+        <Label layoutX="30.0" layoutY="74.0" prefHeight="63.0" prefWidth="391.0" text="Qué tipo de oportunidades te interesan" textFill="#000000" wrapText="true">
+            <font>
+                <Font name="System Bold" size="21.0" />
+            </font>
+        </Label>
+        <Label layoutX="16.0" layoutY="147.0" text="Ubicación" textFill="#000000">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="locationInput" layoutX="16.0" layoutY="184.0" prefHeight="40.0" prefWidth="418.0" promptText="Escribe aquí" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
+
+        <CheckBox fx:id="noLocationCheckBox" layoutX="13.0" layoutY="243.0" style="-fx-text-fill: #000000;" text="No me interesa la ubicación">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </CheckBox>
+        <Label layoutX="16.0" layoutY="281.0" text="Oportunidades" textFill="#000000">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="opportunitiesDropdown" layoutX="16.0" layoutY="318.0" prefHeight="40.0" prefWidth="418.0" promptText="Me interesa...." style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
+
+        <Button fx:id="nextButton" layoutX="16.0" layoutY="489.0" prefHeight="50.0" prefWidth="418.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 8; -fx-text-fill: #FFFFFF;" text="Siguiente">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Label layoutX="173.0" layoutY="551.0" text="Omitir por ahora" textFill="#4CAF50">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+      <ImageView fitHeight="76.0" fitWidth="82.0" layoutX="81.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/LogoImpulse.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="144.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Impulse">
+         <font>
+            <Font name="Nirmala UI Semilight" size="29.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>

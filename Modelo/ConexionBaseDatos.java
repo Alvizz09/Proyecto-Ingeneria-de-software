@@ -74,7 +74,9 @@ public class ConexionBaseDatos {
                         doc.getString("descripcion"),
                         doc.getBoolean("esPrivada"),
                         doc.getString("tags"),
-                        doc.getString("tipo")
+                        doc.getString("tipo"),
+                        (ArrayList<String>) doc.getList("miembros", String.class),
+                        doc.getString("owner")
                 );
                 oportunidades.add(oportunidad);
             }
@@ -132,4 +134,29 @@ public class ConexionBaseDatos {
             return false;
         }
     }
+
+    public boolean guardarOportunidad(Oportunidad oportunidad) {
+        try {
+            MongoCollection<Document> collection = database.getCollection("Oportunidades");
+
+            Document documento = new Document()
+                    .append("idOportunidad", oportunidad.getIdOportunidad())
+                    .append("nombre", oportunidad.getNombre())
+                    .append("descripcion", oportunidad.getDescripcion())
+                    .append("esPrivada", oportunidad.isEsPrivada())
+                    .append("tags", oportunidad.getTags())
+                    .append("tipo", oportunidad.getTipo())
+                    .append("miembros", oportunidad.getMiembros())
+                    .append("owner", oportunidad.getOwner());
+
+            collection.insertOne(documento);
+            System.out.println("Oportunidad guardada exitosamente con ID: " + documento.getObjectId("_id"));
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Error al guardar la oportunidad.");
+            return false;
+        }
+    }
+
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Sistema {
     private static ConexionBaseDatos conexionBaseDatos;
     private static ArrayList<Usuario> usuarios;
-    private ArrayList<Oportunidad> oportunidades;
+    private static ArrayList<Oportunidad> oportunidades;
 
     public Sistema() {
         conexionBaseDatos = new ConexionBaseDatos();
@@ -39,4 +39,17 @@ public class Sistema {
             return false;
 
     }
+
+    {}
+    public static boolean crearOportunidad(String id, String nombre, String descripcion, boolean esPrivada, String tags, String tipo, ArrayList<String> miembros, String owner) {
+        Oportunidad nuevaOportunidad = new Oportunidad(id, nombre, descripcion, esPrivada, tags, tipo, miembros, owner);
+        boolean guardado = conexionBaseDatos.guardarOportunidad(nuevaOportunidad);
+        if (guardado) {
+            oportunidades.add(nuevaOportunidad);
+        }
+        return guardado;
+    }
+
+
+
 }

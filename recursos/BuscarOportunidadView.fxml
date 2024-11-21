@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recursos.BuscarOportunidadView">
+   <children>
+      <ImageView fitHeight="114.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/LogoImpulse.png" />
+         </image></ImageView>
+      <Text layoutX="108.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubre oportunidades" wrappingWidth="264.13671875">
+         <font>
+            <Font name="Nirmala UI Semilight" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que cosas te interesan?" wrappingWidth="235.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutX="34.0" layoutY="140.0" prefHeight="173.0" prefWidth="386.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="385.0" />
+        </content>
+      </ScrollPane>
+      <Text layoutX="34.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tus oportunidades" wrappingWidth="235.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+      <ScrollPane layoutX="34.0" layoutY="373.0" prefHeight="173.0" prefWidth="386.0">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="385.0" />
+         </content>
+      </ScrollPane>
+      <Button layoutX="265.0" layoutY="624.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="63.0" />
+   </children>
+</AnchorPane>

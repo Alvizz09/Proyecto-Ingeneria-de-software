@@ -3,14 +3,10 @@ package Controlador;
 import Modelo.Sistema;
 import Modelo.EmailSender;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.UUID;
 
 public class RegistroController {
@@ -20,17 +16,6 @@ public class RegistroController {
     private TextField emailTextField, passwordTextField, emailRegTextField, passwordRegTextField, nombresRegTextField, ageRegTextField, apellidoRegTextField, carreerTextField, universityTextField, emailField;
 
     private EmailSender emailSender = new EmailSender();
-
-    private void changeScene(Button button, String fxmlFilePath) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFilePath));
-            Stage stage = (Stage) button.getScene().getWindow();
-            Scene scene = new Scene(loader.load());
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -42,27 +27,47 @@ public class RegistroController {
 
     @FXML
     public void iniciarButtonOnAction() {
-        changeScene(iniciarButton, "../recursos/IniciarSesionView.fxml");
+        try {
+            SceneManager.getInstance().switchScene("../recursos/IniciarSesionView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void volverButtonOnAction() {
-        changeScene(volverButton, "../recursos/MainView.fxml");
+        try {
+            SceneManager.getInstance().switchScene("../recursos/MainView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void registerButtonOnAction() {
-        changeScene(registerButton, "../recursos/RegistrarUsuarioView.fxml");
+        try {
+            SceneManager.getInstance().switchScene("../recursos/RegistrarUsuarioView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void volverRegButtonOnAction() {
-        changeScene(volverRegButton, "../recursos/IniciarSesionView.fxml");
+        try {
+            SceneManager.getInstance().switchScene("../recursos/IniciarSesionView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     public void nextRegButtonOnAction() {
-        changeScene(nextRegButton, "../recursos/RegistrarUsuario2View.fxml");
+        try {
+            SceneManager.getInstance().switchScene("../recursos/RegistrarUsuario2View.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
