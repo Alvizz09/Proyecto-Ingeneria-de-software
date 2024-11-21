@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.CrearOportunidadController">
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.OportunidadController">
     <children>
         <Button fx:id="backButton" layoutX="16.0" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" text="&lt;--" textFill="WHITE" />
         <ImageView fitHeight="110.0" fitWidth="126.0" layoutX="340.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;">

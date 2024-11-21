@@ -24,7 +24,7 @@ public class MenuPrincipalController {
     @FXML
     public void CrearButtonOnAction() {
         try {
-            SceneManager.getInstance().switchScene("../recursos/CrearOportunidadesView.fxml", false);
+            SceneManager.getInstance().switchScene("../recursos/CrearOportunidad.fxml", false);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -51,7 +51,7 @@ public class MenuPrincipalController {
     @FXML
     public void ImpulsaButtonOnAction() {
         try {
-            SceneManager.getInstance().switchScene("../recursos/CrearOportunidadesView.fxml", false);
+            SceneManager.getInstance().switchScene("../recursos/CrearOportunidad.fxml", false);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -36,4 +36,15 @@ public class BuscarOportunidadController {
 
         oportunidadesListView.getItems().setAll(filtradas);
     }
+
+    public String getSelectedInteres()
+    {
+        return interesesComboBox.getValue();
+    }
+
+    public Oportunidad getSelectedOportunidad()
+    {
+        return oportunidadesListView.getSelectionModel().getSelectedItem();
+    }
+
 }

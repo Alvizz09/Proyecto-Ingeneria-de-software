@@ -22,7 +22,7 @@ public class OportunidadInteresController {
     }
 
     private void cargarOportunidadesUsuario() {
-        Usuario usuarioActual = Sistema.getUsuarioActual(); // Obtener el usuario actual
+        Usuario usuarioActual = Sistema.getUsuarioActual();
         ArrayList<Oportunidad> oportunidades = conexionBaseDatos.getOportunidadesDb();
         ArrayList<Oportunidad> oportunidadesUsuario = new ArrayList<>();
 
@@ -33,5 +33,9 @@ public class OportunidadInteresController {
         }
 
         oportunidadesListView.getItems().setAll(oportunidadesUsuario);
+    }
+
+    private void CrearOportunidad() {
+
     }
 }

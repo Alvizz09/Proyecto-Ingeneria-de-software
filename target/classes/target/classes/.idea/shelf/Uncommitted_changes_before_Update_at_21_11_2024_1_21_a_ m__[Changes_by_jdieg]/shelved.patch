@@ -1,0 +1,154 @@
+Index: Vista/InterfazApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Vista;\r\n\r\nimport Modelo.ConexionBaseDatos;\r\nimport Modelo.Sistema;\r\nimport javafx.application.Application;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\n\r\npublic class InterfazApp extends Application {\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n\r\n    @Override\r\n    public void start(Stage primaryStage) throws Exception {\r\n        Parent root= FXMLLoader.load(getClass().getResource(\"../recursos/MainView.fxml\"));\r\n        //primaryStage.initStyle(StageStyle.UNDECORATED);\r\n        primaryStage.setTitle(\"Impulse\");\r\n        primaryStage.setScene(new Scene(root, 520,400));\r\n        primaryStage.show();\r\n        Sistema sistema = new Sistema();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Vista/InterfazApp.java b/Vista/InterfazApp.java
+--- a/Vista/InterfazApp.java	(revision 355e788cb96a69ce2387f8f276aaf7a5e3603555)
++++ b/Vista/InterfazApp.java	(date 1732169937122)
+@@ -1,6 +1,5 @@
+ package Vista;
+ 
+-import Modelo.ConexionBaseDatos;
+ import Modelo.Sistema;
+ import javafx.application.Application;
+ import javafx.fxml.FXMLLoader;
+@@ -15,12 +14,11 @@
+ 
+     @Override
+     public void start(Stage primaryStage) throws Exception {
+-        Parent root= FXMLLoader.load(getClass().getResource("../recursos/MainView.fxml"));
+-        //primaryStage.initStyle(StageStyle.UNDECORATED);
++        Parent root = FXMLLoader.load(getClass().getResource("../recursos/MainView.fxml"));
+         primaryStage.setTitle("Impulse");
+-        primaryStage.setScene(new Scene(root, 520,400));
++        primaryStage.setScene(new Scene(root, 720, 1280));
++        primaryStage.setResizable(false); // Evita que se pueda cambiar el tamaño de la ventana
+         primaryStage.show();
+         Sistema sistema = new Sistema();
+     }
+-
+-}
++}
+\ No newline at end of file
+Index: Controlador/OportunidadController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Controlador;\r\n\r\nimport Modelo.ConexionBaseDatos;\r\nimport Modelo.Oportunidad;\r\nimport Modelo.Sistema;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Alert;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.ComboBox;\r\nimport javafx.scene.control.TextArea;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.image.ImageView;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.scene.text.Text;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.UUID;\r\n\r\npublic class OportunidadController {\r\n\r\n    @FXML\r\n    private TextField nameInput;\r\n    @FXML\r\n    private TextArea descriptionInput;\r\n    @FXML\r\n    private Button nextButton;\r\n    @FXML\r\n    private Button backButton;\r\n    @FXML\r\n    private TextField locationInput;\r\n    @FXML\r\n    private ComboBox<String> opportunitiesDropdown;\r\n    @FXML\r\n    private Button StrartupsButton;\r\n    @FXML\r\n    private Button ProyectosButton;\r\n    @FXML\r\n    private Button grupoEstButton;\r\n    @FXML\r\n    private Button semilleroButton;\r\n    @FXML\r\n    private Button otroButton;\r\n    @FXML\r\n    private Button misOportButton;\r\n\r\n    private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();\r\n\r\n\r\n\r\n    @FXML\r\n    private void initialize() {\r\n        nextButton.setOnAction(event -> crearOportunidad());\r\n        backButton.setOnAction(event -> volver());\r\n        StrartupsButton.setOnAction(event -> seleccionarOportunidad(\"Startups\"));\r\n        ProyectosButton.setOnAction(event -> seleccionarOportunidad(\"Proyectos\"));\r\n        grupoEstButton.setOnAction(event -> seleccionarOportunidad(\"Grupo estudiantil\"));\r\n        semilleroButton.setOnAction(event -> seleccionarOportunidad(\"Semillero\"));\r\n        otroButton.setOnAction(event -> seleccionarOportunidad(\"Otro\"));\r\n        misOportButton.setOnAction(event -> verMisOportunidades());\r\n    }\r\n\r\n\r\n\r\n    @FXML\r\n    private void crearOportunidad() {\r\n        try {\r\n            String idOportunidad = UUID.randomUUID().toString();\r\n            String nombre = nameInput.getText().trim();\r\n            String descripcion = descriptionInput.getText().trim();\r\n            boolean esPrivada = false;\r\n            String tags = \"\";\r\n            String tipo = \"\";\r\n            ArrayList<String> miembros = new ArrayList<>();\r\n            String owner = \"\";\r\n\r\n            if (nombre.isEmpty() || descripcion.isEmpty()) {\r\n                mostrarMensaje(\"Todos los campos deben estar llenos\");\r\n                return;\r\n            }\r\n\r\n            boolean creado = Sistema.crearOportunidad(idOportunidad, nombre, descripcion, esPrivada, tags, tipo, miembros, owner);\r\n            if (creado) {\r\n                mostrarMensaje(\"Oportunidad creada con éxito\");\r\n            } else {\r\n                mostrarMensaje(\"Error al crear la oportunidad\");\r\n            }\r\n        } catch (Exception e) {\r\n            mostrarMensaje(\"Error al crear la oportunidad\");\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    private void mostrarMensaje(String mensaje) {\r\n        Alert alert = new Alert(Alert.AlertType.INFORMATION);\r\n        alert.setTitle(\"Mensaje\");\r\n        alert.setHeaderText(null);\r\n        alert.setContentText(mensaje);\r\n        alert.showAndWait();\r\n    }\r\n\r\n    private void volver() {\r\n\r\n    }\r\n\r\n    private void seleccionarOportunidad(String tipo) {\r\n\r\n    }\r\n\r\n    private void verMisOportunidades() {\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Controlador/OportunidadController.java b/Controlador/OportunidadController.java
+--- a/Controlador/OportunidadController.java	(revision 355e788cb96a69ce2387f8f276aaf7a5e3603555)
++++ b/Controlador/OportunidadController.java	(date 1732169779845)
+@@ -6,6 +6,7 @@
+ import javafx.fxml.FXML;
+ import javafx.scene.control.Alert;
+ import javafx.scene.control.Button;
++import javafx.scene.control.CheckBox;
+ import javafx.scene.control.ComboBox;
+ import javafx.scene.control.TextArea;
+ import javafx.scene.control.TextField;
+@@ -13,6 +14,7 @@
+ import javafx.scene.layout.AnchorPane;
+ import javafx.scene.text.Text;
+ 
++import java.io.IOException;
+ import java.util.ArrayList;
+ import java.util.UUID;
+ 
+@@ -22,6 +24,8 @@
+     private TextField nameInput;
+     @FXML
+     private TextArea descriptionInput;
++    @FXML
++    private CheckBox privateCheckBox;
+     @FXML
+     private Button nextButton;
+     @FXML
+@@ -29,37 +33,26 @@
+     @FXML
+     private TextField locationInput;
+     @FXML
+-    private ComboBox<String> opportunitiesDropdown;
+-    @FXML
+-    private Button StrartupsButton;
+-    @FXML
+-    private Button ProyectosButton;
++    private CheckBox noLocationCheckBox;
+     @FXML
+-    private Button grupoEstButton;
+-    @FXML
+-    private Button semilleroButton;
+-    @FXML
+-    private Button otroButton;
+-    @FXML
+-    private Button misOportButton;
++    private ComboBox<String> opportunitiesDropdown;
+ 
+     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
+ 
+-
+-
+     @FXML
+     private void initialize() {
+         nextButton.setOnAction(event -> crearOportunidad());
+-        backButton.setOnAction(event -> volver());
+-        StrartupsButton.setOnAction(event -> seleccionarOportunidad("Startups"));
+-        ProyectosButton.setOnAction(event -> seleccionarOportunidad("Proyectos"));
+-        grupoEstButton.setOnAction(event -> seleccionarOportunidad("Grupo estudiantil"));
+-        semilleroButton.setOnAction(event -> seleccionarOportunidad("Semillero"));
+-        otroButton.setOnAction(event -> seleccionarOportunidad("Otro"));
+-        misOportButton.setOnAction(event -> verMisOportunidades());
+-    }
++        backButton.setOnAction(event -> {
++            try {
++                volver();
++            } catch (IOException e) {
++                throw new RuntimeException(e);
++            }
++        }
++        );
+ 
+-
++        opportunitiesDropdown.getItems().addAll("Startups", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
++    }
+ 
+     @FXML
+     private void crearOportunidad() {
+@@ -67,7 +60,7 @@
+             String idOportunidad = UUID.randomUUID().toString();
+             String nombre = nameInput.getText().trim();
+             String descripcion = descriptionInput.getText().trim();
+-            boolean esPrivada = false;
++            boolean esPrivada = privateCheckBox.isSelected();
+             String tags = "";
+             String tipo = "";
+             ArrayList<String> miembros = new ArrayList<>();
+@@ -98,15 +91,13 @@
+         alert.showAndWait();
+     }
+ 
+-    private void volver() {
+-
+-    }
+-
+-    private void seleccionarOportunidad(String tipo) {
+-
++    @FXML
++    private void volver() throws IOException
++    {
++        try {
++            SceneManager.getInstance().switchScene("../recursos/OportunidadInteresView.fxml", false);
++        } catch (IOException e) {
++            mostrarMensaje("Error al volver a la vista anterior");
++        }
+     }
+-
+-    private void verMisOportunidades() {
+-
+-    }
+ }
+\ No newline at end of file

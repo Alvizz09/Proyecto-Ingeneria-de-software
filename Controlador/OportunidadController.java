@@ -4,6 +4,9 @@ import Modelo.ConexionBaseDatos;
 import Modelo.Oportunidad;
 import Modelo.Sistema;
 import Modelo.Usuario;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -29,6 +32,8 @@ public class OportunidadController {
     @FXML
     private ComboBox<String> tipoOportunidadComboBox;
 
+    ObservableList<String> TipoOportunidad = FXCollections.observableArrayList("Strtup","Proyecto","Grupo estudiantil","Semillero","Otro");
+
     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
 
     @FXML
@@ -53,6 +58,8 @@ public class OportunidadController {
             String descripcion = descriptionInput.getText().trim();
             String tipo = tipoOportunidadComboBox.getValue();
             ArrayList<String> miembros = new ArrayList<>();
+
+
             Usuario usuarioActual = Sistema.getUsuarioActual(); // Obtener el usuario actual
             String owner = usuarioActual.getIdUsuario();
             boolean esPrivada = false;
@@ -65,6 +72,7 @@ public class OportunidadController {
             boolean creado = Sistema.crearOportunidad(idOportunidad, nombre, descripcion, esPrivada, "", tipo, miembros, owner);
             if (creado) {
                 mostrarMensaje("Oportunidad creada con éxito");
+                regresarMenu();
             } else {
                 mostrarMensaje("Error al crear la oportunidad");
             }
@@ -91,13 +99,21 @@ public class OportunidadController {
         }
     }
 
-    private String obtenerTecto(TextField textField){
-
-        return textField.getText();
+    @FXML
+    private void regresarMenu() throws IOException {
+        try {
+            SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
+        } catch (IOException e) {
+            mostrarMensaje("Error al volver a la vista anterior");
+        }
     }
 
-    private String obtenerTipoOportunidad() {
-        return tipoOportunidadComboBox.getValue();
+    public void ListarTipo(Event event) {
+        LlenarCombo(tipoOportunidadComboBox,TipoOportunidad);
+    }
+
+    public static void LlenarCombo(ComboBox<String> cmbCarreras, ObservableList<String> infoCarreras) {
+        cmbCarreras.setItems(infoCarreras);
     }
 
 
