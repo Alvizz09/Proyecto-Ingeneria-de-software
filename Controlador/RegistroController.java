@@ -44,6 +44,7 @@ public class RegistroController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     @FXML
@@ -72,6 +73,7 @@ public class RegistroController {
             e.printStackTrace();
         }
     }
+
 
     @FXML
     private void registrarUsuario() {
@@ -130,7 +132,11 @@ public class RegistroController {
         String correo = emailTextField.getText().trim();
         String contrasena = passwordTextField.getText().trim();
         if (Sistema.validateUser(correo, contrasena))
-            mostrarMensaje("Inicio de sesion exitoso");
+            try{
+                SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         else
             mostrarMensaje("Contraseña invalida");
     }

@@ -39,4 +39,41 @@ public class MenuPrincipalController {
         }
     }
 
+    @FXML
+    public void DescubrirButtonOnAction() {
+        try {
+            SceneManager.getInstance().switchScene("../recursos/BuscarOportunidadView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void ImpulsaButtonOnAction() {
+        try {
+            SceneManager.getInstance().switchScene("../recursos/CrearOportunidadesView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void MisOportunidadesButtonOnAction() {
+        try {
+            SceneManager.getInstance().switchScene("../recursos/OportunidadInteresView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void HomeButtonOnAction()
+    {
+        /*try {
+            SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } */
+    }
+
 }

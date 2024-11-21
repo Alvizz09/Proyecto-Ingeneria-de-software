@@ -23,8 +23,6 @@ public class OportunidadController {
     @FXML
     private TextArea descriptionInput;
     @FXML
-    private CheckBox privateCheckBox;
-    @FXML
     private Button nextButton;
     @FXML
     private Button backButton;
@@ -53,11 +51,11 @@ public class OportunidadController {
             String idOportunidad = UUID.randomUUID().toString();
             String nombre = nameInput.getText().trim();
             String descripcion = descriptionInput.getText().trim();
-            boolean esPrivada = privateCheckBox.isSelected();
             String tipo = tipoOportunidadComboBox.getValue();
             ArrayList<String> miembros = new ArrayList<>();
             Usuario usuarioActual = Sistema.getUsuarioActual(); // Obtener el usuario actual
             String owner = usuarioActual.getIdUsuario();
+            boolean esPrivada = false;
 
             if (nombre.isEmpty() || descripcion.isEmpty() || tipo == null) {
                 mostrarMensaje("Todos los campos deben estar llenos");
@@ -92,4 +90,15 @@ public class OportunidadController {
             mostrarMensaje("Error al volver a la vista anterior");
         }
     }
+
+    private String obtenerTecto(TextField textField){
+
+        return textField.getText();
+    }
+
+    private String obtenerTipoOportunidad() {
+        return tipoOportunidadComboBox.getValue();
+    }
+
+
 }
