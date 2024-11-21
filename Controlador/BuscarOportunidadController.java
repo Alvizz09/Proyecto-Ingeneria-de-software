@@ -23,6 +23,9 @@ public class BuscarOportunidadController {
     @FXML
     private TextArea TagsBuscarTextArea;
 
+    @FXML
+    private TextArea mostrarOportunidades;
+
     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
 
     @FXML

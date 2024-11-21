@@ -26,11 +26,6 @@
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
       </Text>
-      <ScrollPane layoutX="32.0" layoutY="300.0" prefHeight="173.0" prefWidth="386.0">
-         <content>
-          <AnchorPane fx:id="motrarOportunidades" minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="385.0" />
-         </content>
-      </ScrollPane>
       <ImageView fx:id="DescubrirButton" fitHeight="45.0" fitWidth="47.0" layoutX="92.0" layoutY="618.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@../Imagenes/Flecha.png" />
@@ -64,5 +59,6 @@
       </Text>
       <TextArea fx:id="TagsBuscarTextArea" layoutX="33.0" layoutY="193.0" prefHeight="38.0" prefWidth="386.0" promptText="Tags de interes " />
       <Button fx:id="buscarOportunidadButton" layoutX="341.0" layoutY="235.0" mnemonicParsing="false" onAction="#filtrarOportunidades" prefHeight="32.0" prefWidth="78.0" text="Buscar" />
+      <TextArea fx:id="mostrarOportunidades" layoutX="32.0" layoutY="299.0" prefHeight="159.0" prefWidth="386.0" promptText="Tags de interes " />
    </children>
 </AnchorPane>
