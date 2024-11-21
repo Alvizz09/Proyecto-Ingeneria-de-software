@@ -19,6 +19,7 @@ public class InterfazApp extends Application {
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Impulse");
         primaryStage.setScene(new Scene(root, 540,700));
+        primaryStage.setResizable(false);
         primaryStage.show();
         Sistema sistema = new Sistema();
     }

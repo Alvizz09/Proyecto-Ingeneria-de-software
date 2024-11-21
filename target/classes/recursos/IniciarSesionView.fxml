@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.RegistroController">
    <children>
-      <Button fx:id="volverButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#volverButtonOnAction" prefHeight="40.0" prefWidth="72.0" text="&lt;--">
+      <Button fx:id="volverButton" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#volverButtonOnAction" prefHeight="40.0" prefWidth="72.0" text="&lt;--">
          <font>
             <Font size="19.0" />
          </font>
@@ -33,7 +33,7 @@
       </Text>
       <ImageView fitHeight="135.0" fitWidth="142.0" layoutX="261.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@LogoImpulse.png" />
+            <Image url="@../Imagenes/LogoImpulse.png" />
          </image></ImageView>
       <Button fx:id="registerButton" layoutX="276.0" layoutY="534.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: FFFFFFF;" text="Registrate" textFill="#4ed967" />
    </children>
