@@ -37,17 +37,20 @@ public class BuscarOportunidadController {
     @FXML
     private void filtrarOportunidades() {
         String filtro = interesesComboBox.getValue();
-        String tagsFiltro = SeleccionInteresComboBox.getValue();
+        String tagsFiltro = TagsBuscarTextArea.getText().trim();
         ArrayList<Oportunidad> oportunidades = conexionBaseDatos.getOportunidadesDb();
         ArrayList<Oportunidad> filtradas = new ArrayList<>();
 
-        for (Oportunidad oportunidad : oportunidades) {
-            if (oportunidad.getTipo().equals(filtro) && oportunidad.getTags().contains(tagsFiltro)) {
+        for (Oportunidad oportunidad : oportunidades)
+        {
+            if (oportunidad.getTipo().equals(filtro) && oportunidad.getTags().contains(tagsFiltro))
+            {
                 filtradas.add(oportunidad);
             }
         }
 
         mostrarOportunidades(filtradas);
+
     }
 
     private void mostrarOportunidades(ArrayList<Oportunidad> oportunidades) {
@@ -55,7 +58,7 @@ public class BuscarOportunidadController {
         for (Oportunidad oportunidad : oportunidades) {
             sb.append("Nombre: ").append(oportunidad.getNombre()).append("\n");
             sb.append("Descripción: ").append(oportunidad.getDescripcion()).append("\n");
-            sb.append("Tags: ").append(String.join(", ", oportunidad.getTags())).append("\n");
+            sb.append("Tags: ").append(oportunidad.getTags()).append("\n");
             sb.append("Tipo: ").append(oportunidad.getTipo()).append("\n");
             sb.append("Miembros: ").append(String.join(", ", oportunidad.getMiembros())).append("\n");
             sb.append("Owner: ").append(oportunidad.getOwner()).append("\n\n");

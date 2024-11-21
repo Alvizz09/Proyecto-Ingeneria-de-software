@@ -35,7 +35,7 @@ public class OportunidadController {
     @FXML
     private ComboBox<String> tipoOportunidadComboBox;
 
-    ObservableList<String> TipoOportunidad = FXCollections.observableArrayList("Startup", "Proyecto", "Grupo estudiantil", "Semillero", "Otro");
+    ObservableList<String> TipoOportunidad = FXCollections.observableArrayList("Startups", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
 
     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
 

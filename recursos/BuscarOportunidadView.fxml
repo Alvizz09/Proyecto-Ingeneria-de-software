@@ -59,6 +59,6 @@
       </Text>
       <TextArea fx:id="TagsBuscarTextArea" layoutX="33.0" layoutY="193.0" prefHeight="38.0" prefWidth="386.0" promptText="Tags de interes " />
       <Button fx:id="buscarOportunidadButton" layoutX="341.0" layoutY="235.0" mnemonicParsing="false" onAction="#filtrarOportunidades" prefHeight="32.0" prefWidth="78.0" text="Buscar" />
-      <TextArea fx:id="mostrarOportunidades" layoutX="32.0" layoutY="299.0" prefHeight="159.0" prefWidth="386.0" promptText="Tags de interes " />
+      <TextArea fx:id="mostrarOportunidades" disable="true" editable="false" layoutX="32.0" layoutY="299.0" prefHeight="159.0" prefWidth="386.0" promptText="Tags de interes " />
    </children>
 </AnchorPane>

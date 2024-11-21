@@ -84,6 +84,7 @@ public class ConexionBaseDatos {
             e.printStackTrace();
             System.err.println("Error al obtener las oportunidades.");
         }
+        System.out.println("Oportunidades dadas.");
         return oportunidades;
     }
 
