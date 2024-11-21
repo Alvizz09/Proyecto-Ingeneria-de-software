@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.ConexionBaseDatos;
 import Modelo.Oportunidad;
 import Modelo.Sistema;
+import Modelo.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -28,7 +29,7 @@ public class OportunidadController {
     @FXML
     private Button backButton;
     @FXML
-    private ComboBox<String> opportunitiesDropdown;
+    private ComboBox<String> tipoOportunidadComboBox;
 
     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
 
@@ -43,7 +44,7 @@ public class OportunidadController {
             }
         });
 
-        opportunitiesDropdown.getItems().addAll("Startups", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
+        tipoOportunidadComboBox.getItems().addAll("Startups", "Proyectos", "Grupo estudiantil", "Semillero", "Otro");
     }
 
     @FXML
@@ -53,21 +54,22 @@ public class OportunidadController {
             String nombre = nameInput.getText().trim();
             String descripcion = descriptionInput.getText().trim();
             boolean esPrivada = privateCheckBox.isSelected();
-            String tipo = opportunitiesDropdown.getValue();
+            String tipo = tipoOportunidadComboBox.getValue();
             ArrayList<String> miembros = new ArrayList<>();
-            //String owner = Sistema.getUsuarioActual().getId(); // Establecer el owner como el usuario actual
+            Usuario usuarioActual = Sistema.getUsuarioActual(); // Obtener el usuario actual
+            String owner = usuarioActual.getIdUsuario();
 
             if (nombre.isEmpty() || descripcion.isEmpty() || tipo == null) {
                 mostrarMensaje("Todos los campos deben estar llenos");
                 return;
             }
 
-            //boolean creado = Sistema.crearOportunidad(idOportunidad, nombre, descripcion, esPrivada, "", tipo, miembros, owner);
-            /*if (creado) {
+            boolean creado = Sistema.crearOportunidad(idOportunidad, nombre, descripcion, esPrivada, "", tipo, miembros, owner);
+            if (creado) {
                 mostrarMensaje("Oportunidad creada con éxito");
             } else {
                 mostrarMensaje("Error al crear la oportunidad");
-            }*/
+            }
         } catch (Exception e) {
             mostrarMensaje("Error al crear la oportunidad");
             e.printStackTrace();
@@ -85,7 +87,7 @@ public class OportunidadController {
     @FXML
     private void volver() throws IOException {
         try {
-            SceneManager.getInstance().switchScene("../recursos/MenuPrincipalView.fxml", false);
+            SceneManager.getInstance().switchScene("../recursos/OportunidadInteresView.fxml", false);
         } catch (IOException e) {
             mostrarMensaje("Error al volver a la vista anterior");
         }

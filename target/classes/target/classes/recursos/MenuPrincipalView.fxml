@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recursos.MenuPrincipalView">
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.MenuPrincipalController">
    <children>
-      <Button fx:id="BuscarButton" layoutX="46.0" layoutY="249.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Descubrir" textFill="WHITE">
+      <Button layoutX="326.0" layoutY="592.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: ffffff;" text="+">
+         <font>
+            <Font name="Yu Gothic Medium" size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="descubiriButton" layoutX="46.0" layoutY="249.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Descubrir" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font></Button>
@@ -23,17 +26,12 @@
             <Font name="Nirmala UI Semilight" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="CrearButton" layoutX="46.0" layoutY="331.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Impulsa" textFill="WHITE">
+      <Button fx:id="ImpulsaButton" layoutX="46.0" layoutY="331.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Impulsa" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
       </Button>
-      <ImageView fx:id="CrearButton" fitHeight="45.0" fitWidth="70.0" layoutX="320.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Imagenes/masImagen.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="BuscarButton" fitHeight="45.0" fitWidth="45.0" layoutX="73.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="BuscarOportunidadButton" fitHeight="45.0" fitWidth="45.0" layoutX="73.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@../Imagenes/Flecha.png" />
          </image>
@@ -58,7 +56,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button fx:id="CrearButton1" layoutX="46.0" layoutY="414.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Mis oportunidades" textFill="WHITE">
+      <Button fx:id="misOportunidadesButton" layoutX="46.0" layoutY="414.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="374.0" style="-fx-background-color: #4ed967;" text="Mis oportunidades" textFill="WHITE">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>

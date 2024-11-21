@@ -24,7 +24,7 @@ public class MenuPrincipalController {
     @FXML
     public void CrearButtonOnAction() {
         try {
-            SceneManager.getInstance().switchScene("../recursos/CrearTipoOportunidadesView.fxml", false);
+            SceneManager.getInstance().switchScene("../recursos/CrearOportunidadesView.fxml", false);
         } catch (Exception e) {
             e.printStackTrace();
         }
