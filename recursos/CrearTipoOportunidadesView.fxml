@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recursos.OportunidadesView">
+<AnchorPane prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.OportunidadController">
    <children>
       <Button fx:id="StrartupsButton" layoutX="65.0" layoutY="125.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="320.0" style="-fx-background-color: #f5f5f5;" text="Startups" />
       <ImageView fitHeight="125.0" fitWidth="124.0" layoutX="3.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">

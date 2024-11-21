@@ -24,12 +24,19 @@ public class MenuPrincipalController {
     @FXML
     public void crearOportunidadOnAction() {
         try {
-            SceneManager.getInstance().switchScene("../recursos/CrearOportunidad.fxml", false);
+            SceneManager.getInstance().switchScene("../recursos/CrearTipoOportunidadesView.fxml", false);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
+    @FXML
+    public void descubrirOportunidadOnAction() {
+        try {
+            SceneManager.getInstance().switchScene("../recursos/BuscarOportunidadView.fxml", false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

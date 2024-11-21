@@ -6,14 +6,17 @@ import Modelo.Sistema;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class OportunidadController
-{
+public class OportunidadController {
 
     @FXML
     private TextField nameInput;
@@ -21,13 +24,42 @@ public class OportunidadController
     private TextArea descriptionInput;
     @FXML
     private Button nextButton;
+    @FXML
+    private Button backButton;
+    @FXML
+    private TextField locationInput;
+    @FXML
+    private ComboBox<String> opportunitiesDropdown;
+    @FXML
+    private Button StrartupsButton;
+    @FXML
+    private Button ProyectosButton;
+    @FXML
+    private Button grupoEstButton;
+    @FXML
+    private Button semilleroButton;
+    @FXML
+    private Button otroButton;
+    @FXML
+    private Button misOportButton;
 
     private ConexionBaseDatos conexionBaseDatos = new ConexionBaseDatos();
 
+
+
     @FXML
     private void initialize() {
-        // Inicialización si es necesario
+        nextButton.setOnAction(event -> crearOportunidad());
+        backButton.setOnAction(event -> volver());
+        StrartupsButton.setOnAction(event -> seleccionarOportunidad("Startups"));
+        ProyectosButton.setOnAction(event -> seleccionarOportunidad("Proyectos"));
+        grupoEstButton.setOnAction(event -> seleccionarOportunidad("Grupo estudiantil"));
+        semilleroButton.setOnAction(event -> seleccionarOportunidad("Semillero"));
+        otroButton.setOnAction(event -> seleccionarOportunidad("Otro"));
+        misOportButton.setOnAction(event -> verMisOportunidades());
     }
+
+
 
     @FXML
     private void crearOportunidad() {
@@ -64,5 +96,17 @@ public class OportunidadController
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    private void volver() {
+
+    }
+
+    private void seleccionarOportunidad(String tipo) {
+
+    }
+
+    private void verMisOportunidades() {
+
     }
 }
