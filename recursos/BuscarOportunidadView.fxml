@@ -58,8 +58,14 @@
          </font>
       </Text>
       <TextArea fx:id="TagsBuscarTextArea" layoutX="33.0" layoutY="193.0" prefHeight="38.0" prefWidth="386.0" promptText="Tags de interes " />
-      <Button fx:id="buscarOportunidadButton" layoutX="341.0" layoutY="235.0" mnemonicParsing="false" onAction="#filtrarOportunidades" prefHeight="32.0" prefWidth="78.0" text="Buscar" />
+      <Button fx:id="buscarOportunidadButton" layoutX="296.0" layoutY="235.0" mnemonicParsing="false" onAction="#filtrarOportunidades" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #4CAF50;" text="Buscar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
       <TextArea fx:id="mostrarOportunidades" editable="false" layoutX="32.0" layoutY="299.0" prefHeight="159.0" prefWidth="386.0" promptText="Tags de interes " />
-      <Button fx:id="confimarSeleccionButton" layoutX="188.0" layoutY="594.0" mnemonicParsing="false" onAction="#elegirOportunidadButtonOnAction" text="Confirmar" />
+      <Button fx:id="confimarSeleccionButton" layoutX="135.0" layoutY="570.0" mnemonicParsing="false" onAction="#elegirOportunidadButtonOnAction" prefHeight="32.0" prefWidth="168.0" style="-fx-background-color: #4CAF50;" text="Confirmar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>
