@@ -21,11 +21,12 @@ public class RegistroController {
     private TextField emailTextField, passwordTextField, emailRegTextField, passwordRegTextField, nombresRegTextField, ageRegTextField, apellidoRegTextField, carreerTextField, universityTextField, emailField;
 
     @FXML
-    private ComboBox ComboCarrerButton;
+    private ComboBox comboCarrerButton, comboUniversidadButton;
 
     private EmailSender emailSender = new EmailSender();
 
     ObservableList<String> carreraList = FXCollections.observableArrayList("Ingenieria sistemas","Administrracion","Artes");
+    ObservableList<String> universidadList = FXCollections.observableArrayList("Javeriana","Andes");
 
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -81,8 +82,8 @@ public class RegistroController {
             String correo = obtenerTexto(emailRegTextField);
             String contrasena = obtenerTexto(passwordRegTextField);
             Integer edad = obtenerEdad(ageRegTextField);
-            String carrera = obtenerTextoComboBox(ComboCarrerButton);
-            String universidad = obtenerTexto(universityTextField);
+            String carrera = obtenerTextoComboBox(comboCarrerButton);
+            String universidad = obtenerTextoComboBox(comboUniversidadButton);
 
             boolean registrado = Sistema.registrarUsuario(idUsuario, nombre, apellido, correo, contrasena, edad, carrera, universidad);
             if (registrado) {
@@ -135,10 +136,14 @@ public class RegistroController {
     }
 
     public void ListarCarreras(Event event) {
-        LlenarCombo(ComboCarrerButton,carreraList);
+        LlenarCombo(comboCarrerButton,carreraList);
     }
 
     public static void LlenarCombo(ComboBox<String> cmbCarreras, ObservableList<String> infoCarreras) {
         cmbCarreras.setItems(infoCarreras);
+    }
+
+    public void listarUniversidad(Event event) {
+        LlenarCombo(comboUniversidadButton,universidadList);
     }
 }

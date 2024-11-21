@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.CrearOportunidadController">
     <children>
         <Button fx:id="backButton" layoutX="16.0" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" text="&lt;--" textFill="WHITE" />
         <ImageView fitHeight="88.0" fitWidth="186.0" layoutX="362.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;">
@@ -30,10 +30,11 @@
                 <Font size="14.0" />
             </font>
         </CheckBox>
-        <Button fx:id="nextButton" layoutX="16.0" layoutY="462.0" prefHeight="50.0" prefWidth="418.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 8; -fx-text-fill: #FFFFFF;" text="Siguiente">
+        <Button fx:id="nextButton" layoutX="16.0" layoutY="583.0" prefHeight="50.0" prefWidth="418.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 8; -fx-text-fill: #FFFFFF;" text="Siguiente">
             <font>
                 <Font size="16.0" />
             </font>
         </Button>
+      <ComboBox layoutX="20.0" layoutY="442.0" prefHeight="50.0" prefWidth="418.0" promptText="Tipo de oportunidad" />
     </children>
 </AnchorPane>

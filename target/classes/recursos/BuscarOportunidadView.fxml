@@ -16,17 +16,17 @@
             <Font name="Nirmala UI Semilight" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que cosas te interesan?" wrappingWidth="235.287109375">
+      <Text layoutX="34.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que te interesa?" wrappingWidth="235.287109375">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tus oportunidades" wrappingWidth="235.287109375">
+      <Text layoutX="34.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tus oportunidades" wrappingWidth="235.287109375">
          <font>
             <Font name="Nirmala UI Semilight" size="18.0" />
          </font>
       </Text>
-      <ScrollPane layoutX="34.0" layoutY="373.0" prefHeight="173.0" prefWidth="386.0">
+      <ScrollPane layoutX="33.0" layoutY="324.0" prefHeight="173.0" prefWidth="386.0">
          <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="385.0" />
          </content>
@@ -50,5 +50,6 @@
             <Font name="Nirmala UI Semilight" size="14.0" />
          </font>
       </Text>
+      <ComboBox fx:id="interesesComboBox" layoutX="33.0" layoutY="140.0" prefHeight="38.0" prefWidth="386.0" promptText="Intereses" style="-fx-background-color: ffffff; -fx-border-color: e4e4e4;" />
    </children>
 </AnchorPane>
