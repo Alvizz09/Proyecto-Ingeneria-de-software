@@ -32,7 +32,6 @@ public class SceneManager {
     public void setPrimaryStage(Stage stage) {
         this.primaryStage = stage;
     }
-
     public Stage getPrimaryStage() {
         return primaryStage;
     }

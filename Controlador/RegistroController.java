@@ -25,10 +25,9 @@ public class RegistroController {
         alert.showAndWait();
     }
 
-    //UTILIZA getInstance en lugar de instanciar un scene manager, PORQUE ES UN SINGLETON
-
     @FXML
-    public void iniciarButtonOnAction() {
+    public void iniciarButtonOnAction()
+    {
         try {
             SceneManager.getInstance().switchScene("../recursos/IniciarSesionView.fxml", false);
         } catch (Exception e) {

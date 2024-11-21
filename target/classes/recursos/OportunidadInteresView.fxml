@@ -7,7 +7,6 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <!-- Botón de regreso -->
         <Button fx:id="backButton" layoutX="16.0" layoutY="23.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" />
         <Label layoutX="30.0" layoutY="74.0" prefHeight="63.0" prefWidth="391.0" text="Qué tipo de oportunidades te interesan" textFill="#000000" wrapText="true">
             <font>
