@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.OportunidadController">
+    <children>
+        <Button fx:id="backButton" layoutX="16.0" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;" text="&lt;--" textFill="WHITE" />
+        <ImageView fitHeight="110.0" fitWidth="126.0" layoutX="340.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 20; -fx-background-color: #4CAF50;">
+            <image>
+                <Image url="@../Imagenes/LogoImpulse.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="16.0" layoutY="80.0" text="Nombre de tu Oportunidad" textFill="#000000">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nameInput" layoutX="16.0" layoutY="110.0" prefHeight="40.0" prefWidth="418.0" promptText="Escribe aquí" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
+        <Label layoutX="16.0" layoutY="161.0" text="Descripción de tu oportunidad" textFill="#000000">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="descriptionInput" layoutX="16.0" layoutY="186.0" prefHeight="186.0" prefWidth="418.0" promptText="Escribe aquí" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
+        <Button fx:id="nextButton" layoutX="16.0" layoutY="600.0" prefHeight="50.0" prefWidth="418.0" style="-fx-background-color: #4CAF50; -fx-background-radius: 8; -fx-text-fill: #FFFFFF;" text="Crear">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+      <ComboBox fx:id="tipoOportunidadComboBox" layoutX="16.0" layoutY="407.0" prefHeight="40.0" prefWidth="418.0" promptText="Tipo de oportunidad" />
+      <Label layoutX="20.0" layoutY="382.0" text="Elige que tipo de oportunidad estas creando" textFill="#000000">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="453.0" prefHeight="50.0" prefWidth="418.0" text="Escribe que tags que defina tu idea, Separalos por comas" textFill="#000000">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="creartagsInput" layoutX="16.0" layoutY="503.0" prefHeight="76.0" prefWidth="418.0" promptText="Escribe aquí" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #CCCCCC; -fx-background-color: #FFFFFF;" />
+    </children>
+</AnchorPane>

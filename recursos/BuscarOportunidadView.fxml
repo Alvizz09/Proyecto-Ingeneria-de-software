@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.BuscarOportunidadController">
+   <children>
+      <ImageView fitHeight="114.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/LogoImpulse.png" />
+         </image></ImageView>
+      <Text layoutX="108.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubre oportunidades" wrappingWidth="264.13671875">
+         <font>
+            <Font name="Nirmala UI Semilight" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que te interesa?" wrappingWidth="235.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="34.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tus oportunidades" wrappingWidth="235.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="DescubrirButton" fitHeight="45.0" fitWidth="47.0" layoutX="92.0" layoutY="618.0" onMouseClicked="#volverMenu" pickOnBounds="true" preserveRatio="true" rotate="360.0">
+         <image>
+            <Image url="@../Imagenes/Home.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="85.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descubrir" wrappingWidth="59.419921875">
+         <font>
+            <Font name="Nirmala UI Semilight" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="ImpulsaButton" fitHeight="56.0" fitWidth="67.0" layoutX="293.0" layoutY="621.0" onMouseClicked="#impulsarButtonOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/masImagen.png" />
+         </image></ImageView>
+      <Text layoutX="303.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Impulsa" wrappingWidth="47.478515625">
+         <font>
+            <Font name="Nirmala UI Semilight" size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="interesesComboBox" layoutX="32.0" layoutY="124.0" prefHeight="38.0" prefWidth="386.0" promptText="Intereses" style="-fx-background-color: ffffff; -fx-border-color: e4e4e4;" />
+      <Text layoutX="37.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Te gusto algo?, elige a que proyecto quieres colaboral" wrappingWidth="376.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="SeleccionInteresComboBox" layoutX="32.0" layoutY="522.0" onAction="#getSelectedInteres" prefHeight="38.0" prefWidth="386.0" promptText="Intereses" style="-fx-background-color: ffffff; -fx-border-color: e4e4e4;" />
+      <Text layoutX="34.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Que te interesa?" wrappingWidth="235.287109375">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="TagsBuscarTextArea" layoutX="33.0" layoutY="193.0" prefHeight="38.0" prefWidth="386.0" promptText="Tags de interes " />
+      <Button fx:id="buscarOportunidadButton" layoutX="296.0" layoutY="235.0" mnemonicParsing="false" onAction="#filtrarOportunidades" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #4CAF50;" text="Buscar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <TextArea fx:id="mostrarOportunidades" editable="false" layoutX="32.0" layoutY="299.0" prefHeight="159.0" prefWidth="386.0" promptText="Tags de interes " />
+      <Button fx:id="confimarSeleccionButton" layoutX="135.0" layoutY="570.0" mnemonicParsing="false" onAction="#elegirOportunidadButtonOnAction" prefHeight="32.0" prefWidth="168.0" style="-fx-background-color: #4CAF50;" text="Confirmar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

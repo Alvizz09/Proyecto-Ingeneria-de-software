@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.RegistroController">
+    <children>
+        <Button fx:id="volverRegButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#volverRegButtonOnAction" prefHeight="40.0" prefWidth="72.0" text="&lt;--">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Button>
+        <Text layoutX="114.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listo para Impulsarte?" textAlignment="CENTER" wrappingWidth="272.28564453125">
+            <font>
+                <Font name="Gill Sans Nova Bold" size="47.0" />
+            </font>
+        </Text>
+        <Text layoutX="199.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crea tu cuenta">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
+        <TextField fx:id="emailRegTextField" layoutX="70.0" layoutY="172.0" prefHeight="55.0" prefWidth="361.0" promptText="Correo" />
+        <TextField fx:id="nombresRegTextField" layoutX="70.0" layoutY="239.0" prefHeight="55.0" prefWidth="361.0" promptText="Nombre" />
+      <TextField fx:id="passwordRegTextField" layoutX="70.0" layoutY="367.0" prefHeight="55.0" prefWidth="361.0" promptText="Contraseña" />
+      <TextField fx:id="apellidoRegTextField" layoutX="70.0" layoutY="304.0" prefHeight="55.0" prefWidth="361.0" promptText="Apellido" />
+      <TextField fx:id="ageRegTextField" layoutX="70.0" layoutY="432.0" prefHeight="55.0" prefWidth="361.0" promptText="Edad" />
+      <Button fx:id="finishRegButton" layoutX="70.0" layoutY="625.0" mnemonicParsing="false" onAction="#registrarUsuario" prefHeight="55.0" prefWidth="361.0" style="-fx-background-color: #4ed967;" text="Impulsame">
+         <font>
+            <Font name="Nirmala UI Semilight" size="18.0" />
+         </font></Button>
+      <ComboBox fx:id="comboCarrerButton" layoutX="70.0" layoutY="495.0" onShowing="#ListarCarreras" prefHeight="55.0" prefWidth="361.0" promptText="Carrera" style="-fx-background-color: ffffff; -fx-border-color: #CCCCCC; -fx-border-radius: 3;" />
+      <ComboBox fx:id="comboUniversidadButton" layoutX="70.0" layoutY="563.0" onShowing="#listarUniversidad" prefHeight="55.0" prefWidth="361.0" promptText="Universidad" style="-fx-background-color: ffffff; -fx-border-color: #CCCCCC; -fx-border-radius: 3;" />
+    </children>
+</AnchorPane>

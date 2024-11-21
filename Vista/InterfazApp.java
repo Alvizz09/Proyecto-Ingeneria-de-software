@@ -1,5 +1,6 @@
 package Vista;
 
+import Controlador.SceneManager;
 import Modelo.ConexionBaseDatos;
 import Modelo.Sistema;
 import javafx.application.Application;
@@ -15,12 +16,19 @@ public class InterfazApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        SceneManager.getInstance().setPrimaryStage(primaryStage);
         Parent root= FXMLLoader.load(getClass().getResource("../recursos/MainView.fxml"));
         //primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setTitle("RentCar");
-        primaryStage.setScene(new Scene(root, 520,400));
-        primaryStage.show();
-        Sistema sistema = new Sistema();
 
+        SceneManager.getInstance().switchScene("../recursos/MainView.fxml", false);
+        primaryStage.show();
+        //primaryStage.setTitle("Impulse");
+        primaryStage.setScene(new Scene(root, 540,700));
+        primaryStage.setResizable(false);
+        //primaryStage.show();
+
+        Sistema sistema = new Sistema();
     }
+
 }

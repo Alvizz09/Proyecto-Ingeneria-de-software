@@ -9,12 +9,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ControladorPrincipal {
+    @FXML
     public Button salir;
+
     public Label mensajeInicioDeSesion;
+    @FXML
     public Button iniciarSesion;
+    @FXML
     public Button registrarse,registarEstudiante,registrarUniEmp,volver,confirmarRegistro;
     public PasswordField password;
     public TextField eMail;
+
     @FXML
     public void registroOnAction() {
         try {
@@ -26,13 +31,13 @@ public class ControladorPrincipal {
             e.printStackTrace();
         }
     }
-
+    @FXML
     public void salirOnAction(){
         Stage stage= (Stage) salir.getScene().getWindow();
         stage.close();
     }
 
-
+    @FXML
     private void mostrarMensaje(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Mensaje");
@@ -40,6 +45,7 @@ public class ControladorPrincipal {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+
     @FXML
     private void validarRegistro(){
 
@@ -56,6 +62,7 @@ public class ControladorPrincipal {
             e.printStackTrace();
         }
     }
+    @FXML
     public void registroUniEmpoOnAction() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../resource/RegistroEmpresa/UniversidadView.fxml"));
@@ -88,5 +95,7 @@ public class ControladorPrincipal {
             e.printStackTrace();
         }
     }
+
+
 
 }

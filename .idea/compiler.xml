@@ -9,5 +9,8 @@
         <module name="IMPULSE" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="IMPULSE (1)" target="22" />
+    </bytecodeTargetLevel>
   </component>
 </project>
